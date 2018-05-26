@@ -17,4 +17,5 @@
  *= require dataTables/datatables.min.css
  *= require iCheck/custom.css
  *= require_self
+ *= require_tree .
  */
