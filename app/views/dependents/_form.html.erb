@@ -1,0 +1,47 @@
+<%= form_with(model: dependent, local: true) do |form| %>
+  <% if dependent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dependent.errors.count, "error") %> prohibited this dependent from being saved:</h2>
+
+      <ul>
+      <% dependent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :request_id %>
+    <%= form.text_field :request_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :second_last_name %>
+    <%= form.text_field :second_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthdate %>
+    <%= form.date_select :birthdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :relationship %>
+    <%= form.number_field :relationship %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

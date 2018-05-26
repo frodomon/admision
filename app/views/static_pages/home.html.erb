@@ -1,7 +1,27 @@
 <% provide(:title, "AELUCOOP - Admisión de Socios") %>
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
-<% if user_signed_in? %>
-  <p>Hello, <%= current_user.name %> - <%= link_to "Sign Out", destroy_user_session_path, method: 'delete' %>
-  <br>
-<% end %>
+<div class="header">
+	<img class="logo-landing" src="<%= image_url 'logo.png' %>" alt="AELUCOOP">
+</div>
+<div class="landing">
+<h1 style="display:none;">AELUCOOP</h1>
+	<div class="left50 centered-form-flex">
+		<h2 class="landing-title">Solicitud de Afiliación en línea</h2>
+		<p class="landing-text">Completarla es muy sencillo, solo necesitas unos cuantos datos. No olvides tener a la mano:</p>
+		<ul class="landing-list">
+			<li>
+				<p class="landing-text">Tú número de DNI y el de tu cónyuge si eres casado</p>
+			</li>
+			<li>
+				<p class="landing-text">Tú código de socio o del alumno si perteneces a alguna de nuestras Alianzas Estratégicas.*</p>
+			</li>
+			<li>
+				<p class="landing-text">Los datos de tu patrocinante en caso de no pertenecer a nuestras Alianzas Estratégicas</p>
+			</li>
+		</ul>
+		<p class="landing-text">Este formulario es para personas con nacionalidad peruana y que residen en el Perú. Si no cumples con alguno de estos requisitos, por favor acércate a cualquiera de nuestras oficinas para completar tu Solicitud de Afiliación</p>
+		<%= button_to '¡Comencemos!' , new_request_path, method: :get, class: 'landing-btn' %>
+		<p class="landing-legal">*Alianzas Estratégicas: AELU, C.C. El Bosque, Real Club de Lima, Colegio La Unión,  Ceine Santa Beatriz y Colegio San Antonio de Padua.</p>
+	</div>
+</div>
+
+

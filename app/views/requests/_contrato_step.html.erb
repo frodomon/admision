@@ -1,0 +1,17 @@
+<div class="title">
+  <h2 class="form-title">Falta muy poco para que seas parte de AELUCOOP</h2>
+</div>
+<div id="contratos" class="centered-form-flex full-width" style="margin:6rem 0 3rem 0;">
+	<div class="pdf group">
+		<div class="icon">
+			<img class="pdf-img" src="<%= image_url 'pdf.png' %>" alt="Contrato">
+		</div>
+		<div class='pdf-text'>
+			<p class="pdf-txt">Revisa el Contrato de Prestación de Productos y Servicios</p>
+		</div>
+	</div>
+	<div>
+		<%= form.check_box :contrato %>
+		<%= form.label :contrato, 'He leído y acepto las cláusulas del contrato' %>
+	</div>
+</div>

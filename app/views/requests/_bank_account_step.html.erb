@@ -1,0 +1,24 @@
+<div class="title">
+  <h2 class="form-title">¿Tienes cuentas en algún banco?</h2>
+</div>
+<div class='col-lg-12 col-md-12 col-12 centered-form-flex-row'>
+  <div class="table-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <table class="footable table table-stripped">
+      <thead>
+        <tr>
+          <th>Banco</th>
+          <th>Cuenta Corriente</th>
+          <th>Cuenta de Ahorro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= form.fields_for :bank_accounts do |builder| %>
+            <%= render 'bank_account_fields', f: builder %>
+        <% end %>
+      </tbody>
+    </table>
+     <div class='add_fields'>
+        <%= link_to_add_row_fields "Añadir Banco", form, :bank_accounts %>
+      </div>
+  </div>
+</div>

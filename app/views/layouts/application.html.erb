@@ -14,19 +14,15 @@
 <body>
   <!-- Wrapper-->
   <div id="wrapper">
-    <header>
-    </header>
-    <!-- Page wraper -->
-    <div id="page-wrapper" class="gray-bg">
-      <!-- Main view  -->
-      <%= yield %>
-    </div>
-    <!-- End page wrapper-->
-    <!-- Footer -->
-    <%= render 'layouts/footer' %>
+    <!-- Main view  -->
+    <section id="header">
+      <img class="logo-landing logo-form" src="<%= image_url 'logo.png' %>" alt="AELUCOOP">
+    </section>
+    <%= yield %>
   </div>
   <!-- End wrapper-->
   <!-- Include javascript per-controller - vendor plugins -->
+
   <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
   <!-- Include javascript per-view -->
   <!-- For demo purpose we include javascript in view but you can easily start SeedProject and organize it with Rails asset pipeline as you want -->

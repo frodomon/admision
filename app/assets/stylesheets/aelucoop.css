@@ -1,7 +1,7 @@
 /*****************************BASICS************/
 html, body {
-  height: 100%;
-  font-size:16px;
+  height: 100% !important;
+  font-size:16px !important;
   margin: 0 auto;
 }
 .form-group {
@@ -81,7 +81,7 @@ html, body {
 header{
 	width:100%;
 	height: 150px;
-	background-color: blue;
+	background-color: #364061;
 }
 .middle-form{
 	width:15%;
@@ -105,6 +105,388 @@ footer{
   align-items: center;
   align-content:center;
 }
+.centered-form-flex-row{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content:center; 
+}
+.centered-form-flex-sb{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content:center; 
+}
 .flex{
 	display:flex;
 }
+.hide{
+  display:none;
+}
+/**********Laniding Page**********/
+.header{
+  height: 100px;
+  width: 100%;
+  padding: 25px 2%;
+  background-color: #364061; 
+}
+.logo-landing{
+  height: 100%;
+  display: block;
+}
+.landing{
+  display:flex;
+  width:100%;
+  height: calc(100% - 100px);
+  background: url(landing.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.gracias{
+  display:flex;
+  width:100%;
+  height: calc(100% - 100px);
+}
+.w30{
+  width: 30%;
+  margin: 0 auto;
+}
+.left50{
+  width:45%;
+  padding-left: 5%;
+}
+.left60 ul{
+  color: #FDFDFE;
+}
+.landing-title{
+  font-size: 2.8rem;
+  color: #FDFDFE;
+  font-family: 'Swiss721-BT Bold Rounded';
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  margin: 0 0 3rem 0;
+}
+.landing-list{
+  margin:0;
+}
+
+.landing-text{
+  color: #FDFDFE;
+  font-family: 'Swiss721-BT Bold Rounded';
+  font-size:1.2rem;
+  line-height:1.4rem;
+  font-weight: 500;
+  margin: 0 0 1.3rem 0;
+}
+.landing-btn{
+  color: #FDFDFE;
+  font-family: 'Swiss721-BT Bold Rounded';
+  font-size:1.2rem;
+  background-color: #078EFF;
+  border: 0;
+  border-radius: 4px;
+  width: 220px;
+  height: 40px;
+  margin: 2rem 0;
+}
+.landing-legal{
+  color: #FDFDFE;
+  font-family: 'Swiss721-BT';
+  font-size:0.8rem;
+  margin: 2rem 0 0 0;
+}
+/**********Form Page**********/
+#header{
+  height: 100px;
+  width: 100%;
+  padding: 25px 2%;
+  background: url(header_gradient.jpg) no-repeat center center;
+}
+.logo-form{
+  padding: 0;
+}
+.full-width{
+  width: 100%
+}
+#request{
+  width:100%;
+  height:calc(100% - 100px);
+}
+.request{
+  width:60%;
+}
+.title{
+  margin-bottom: 3rem;
+}
+.subtitle{
+  margin-bottom: 2rem;
+}
+.form-field{
+  margin-bottom: 2rem !important;
+}
+.form-title{
+  font-size: 2.8rem;
+  color: #364061;
+  font-family: 'Swiss721-BT Bold Rounded';
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
+.form-subtitle{
+  font-family: 'Swiss721-BT Bold Rounded';
+  font-size: 1.5rem;
+  color: #465374;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center; 
+}
+.form-label{
+  color: #135BAF;
+  font-family: 'HelveticaNeue';
+  text-align: left;
+  width:100%;
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 0.8rem;
+}
+.form-input{
+  border: 1px solid #135BAF;
+  font-size: 1rem ;
+  font-family: 'HelveticaNeue';
+  border-radius: 2px;
+  width: 100%;
+  height: 2.9rem;
+  padding: 0 1rem;
+}
+.control{
+  border: 1px solid #135BAF !important;
+  font-size: 1rem !important;
+  font-family: 'HelveticaNeue';
+  border-radius: 2px !important;
+  width: 100%;
+  height: 2.9rem !important;
+  padding: 0 1rem !important; 
+}
+.form-select{
+  border: 1px solid #135BAF !important;
+  border-radius: 2px !important;
+  height: 2.9rem !important;
+}
+.form-data{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.form-data p{
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-family: 'HelveticaNeue';
+  color: #586787;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+}
+.go-btn{
+  background-color: #135BAF;
+  border-radius: 4px;
+  width: 220px;
+  height: 44px;
+  color: #FDFDFE;
+  font-family: 'Swiss721-BT';
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+}
+.back-btn{
+  border: 1px solid #135BAF;
+  border-radius: 4px;
+  width: 220px;
+  height: 44px;
+  color: #0B86C9;
+  font-family: 'Swiss721-BT';
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+  padding: 9px 70px;
+  background-color: #FFFFFF;
+}
+.big_btn{
+  line-height: 2rem !important;
+}
+#verifyData,
+.job,
+.company,
+.business,
+.college,
+.conyuge,
+.spouse_info,
+.instituciones{
+  display:none;
+}
+.conyuge{
+  padding:4rem 0;
+}
+.square {
+  width: 210px;
+  height: 260px;
+  border-radius: 8px;
+  background-color: #e8e8e8;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content:center;
+}
+.square-img{
+  height: 84px;
+}
+.square-txt{
+  margin: 2.5rem 1rem 0 1rem;
+  font-family: 'Swiss721-BT';
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #29304e;
+}
+.off{
+  display: block;
+}
+.on{
+  display: none;
+}
+.pdf{
+  border: 2px solid #135BAF;
+  border-radius: 4px;
+  width: 383px;
+  height: 132px;
+}
+.icon{
+  width: 40%;
+  float:left;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content:center; 
+}
+.icon img{
+  
+  height:70%;
+}
+.pdf-text{
+  width: 60%;
+  float:left;
+}
+.pdf-txt{
+  color: #586787;
+  font-family: 'HelveticaNeue';
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left
+}
+.actions{
+  margin: 2rem 0;
+}
+.thanks-btn{
+  padding: 0.5rem 3rem;
+  background-color: #135BAF;
+  border-radius: 4px;
+  color: #FFF;
+  font-weight: 700;
+}
+.thanks-btn:hover{
+  background-color: #135BAF;
+  color: #EFEFEF;
+}
+
+/**Ficha Solicitud**/
+
+.ftable{
+  max-width: 2480px;
+  width: 100%;
+}
+  .table_campos{
+    font-family: "Arial";
+  font-size: 9px;
+  border-bottom-style: dotted;
+  border-width: 1px;
+  height: 23px;
+  }
+  .table-titulo{
+  border-width: 0px;
+  }
+  .ftable td{
+    width: auto;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+  .ftable th{
+  font-family: "Arial";
+  font-size: 8px;
+  font-weight: bold;
+  background-color:#D9E4EE;
+  }
+  .fila_campos {
+    border-bottom-style: dotted;
+    border-width: 1px;
+  }
+  .cabecera{
+    background-color:#0754D3;
+  }
+  .campos_round_border{
+    border-width: 1px;
+  border-radius: 20px;
+  }
+  .titulo{
+    font-weight: bold;
+  font-size: 12px;
+  font-family: "Arial";
+  color: #FFFFFF;
+  background-color:#0754D3;
+  text-align:center;
+  height: 25px;
+  }
+  .titulo_derecha{
+  font-size: 8px;
+  font-family: "Arial";
+  color: #000000;
+  background-color:#D9E4EE;
+  text-align:left;
+  }
+  .subtitulo{
+    font-family: "Arial";
+    font-weight: bold;
+  font-size: 10px;
+  }
+  .pagebreak{ 
+    page-break-before: always;
+  }
+  @media  (min-width: 1024px) and (max-width: 1400px) {
+   .landing{
+    height: auto;
+   } 
+ }

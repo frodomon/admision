@@ -10,7 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery3
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require uiux
+//= require load_data
+//= require add_remove_fields
+//= require validations
+//= require ubigeos
+//= require iCheck/icheck.min.js
+//= require dataTables/datatables.min.js

@@ -1,0 +1,21 @@
+<div class="title">
+  <h2 class="form-title">¿Perteneces a alguna de estas instituciones?</h2>
+</div>
+
+<div class="col-12 col-lg-12 col-md-12">
+  <div class="row">
+    <div class="form-group col-6 col-lg-6 col-md-6 col-offset-3 col-lg-offset-3 col-md-offset-3">
+      <%= form.collection_select :alianza_id, Alianza.order(:id), :id, :nombre , options = {  :prompt => 'Seleccione una Institucion'}, html_options = { class: 'select2_demo_1 form-control form-select' } %>
+    </div>
+  </div>
+</div>
+<div class='instituciones col-lg-12 col-md-12 col-12'>
+  <div class="row">
+    <div class="centered-form-flex-row">
+      <div class="form-group col-6 col-lg-6 col-md-6">
+  	    <%= form.label :alianza_code, "Código", class: 'control-label form-label colegio' %>
+  	    <%= form.text_field :alianza_code, class: 'form-control form-input control' %>
+    	</div>
+    </div>
+  </div>
+</div>

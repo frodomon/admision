@@ -1,0 +1,32 @@
+<div class="title">
+  <h2 class="form-title">¿Qué productos de AELUCOOP te interesan?</h2>
+</div>
+<div id="productos" class="centered-form-flex-sb full-width" style="margin:6rem 0;">
+	<a href="#" class="credito">
+		<div class="square">
+			<img class="square-img off" src="<%= image_url 'img_credito.png' %>" alt="Crédito">
+			<img class="square-img on" src="<%= image_url 'img_credito_on.png' %>" alt="Crédito">
+			<p class="square-txt">Créditos</p>
+		</div>
+	</a>
+	<a href="#" class="ahorro">
+		<div class="square">
+			<img class="square-img off" src="<%= image_url 'img_ahorros.png' %>" alt="Cuenta de Ahorros">
+			<img class="square-img on" src="<%= image_url 'img_ahorros_on.png' %>" alt="Cuenta de Ahorros">
+			<p class="square-txt">Cuenta de Ahorros</p>
+		</div>
+	</a>
+	<a href="#" class="deposito">
+		<div class="square">
+			<img class="square-img off" src="<%= image_url 'img_deposito.png' %>" alt="Déposito a Plazo fijo">
+			<img class="square-img on" src="<%= image_url 'img_deposito_on.png' %>" alt="Déposito a Plazo fijo">
+			<p class="square-txt">Déposito a plazo fijo</p>
+		</div>
+	</a>
+</div>
+<div style="display:none;">
+	<%= form.check_box :credito %>
+	<%= form.check_box :ahorro %>
+	<%= form.check_box :plazofijo %>
+</div>
+<%= javascript_tag "productos = #{@productos.to_json.html_safe};" %>

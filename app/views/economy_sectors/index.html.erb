@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Economy Sectors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @economy_sectors.each do |economy_sector| %>
+      <tr>
+        <td><%= economy_sector.name %></td>
+        <td><%= link_to 'Show', economy_sector %></td>
+        <td><%= link_to 'Edit', edit_economy_sector_path(economy_sector) %></td>
+        <td><%= link_to 'Destroy', economy_sector, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Economy Sector', new_economy_sector_path %>

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Swiss721-BT Bold Rounded";
+  src: url('Swiss721BoldRoundedBT.ttf') format("truetype");
+}
+@font-face {
+  font-family: "Swiss721-BT Bold";
+  src: url('swz721b.ttf') format("truetype");
+}
+@font-face {
+  font-family: "Swiss721-BT";
+  src: url('swz721n.ttf') format("truetype");
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url('HelveticaNeue.ttf') format("truetype");
+}

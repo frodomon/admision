@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Request:</strong>
+  <%= @dependent.request %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dependent.name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @dependent.last_name %>
+</p>
+
+<p>
+  <strong>Second last name:</strong>
+  <%= @dependent.second_last_name %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @dependent.birthdate %>
+</p>
+
+<p>
+  <strong>Relationship:</strong>
+  <%= @dependent.relationship %>
+</p>
+
+<%= link_to 'Edit', edit_dependent_path(@dependent) %> |
+<%= link_to 'Back', dependents_path %>

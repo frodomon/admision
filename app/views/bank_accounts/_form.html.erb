@@ -1,0 +1,31 @@
+<%= form_with(model: bank_account, local: true) do |form| %>
+  <% if bank_account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bank_account.errors.count, "error") %> prohibited this bank_account from being saved:</h2>
+
+      <ul>
+      <% bank_account.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='col-lg-8 col-md-8 col-sm-8'>
+      <%= form.collection_select :bank_id, Bank.order(:name), :id, :name , options = {  :prompt => 'Seleccione un Banco'}, html_options = { class: 'select2_demo_1 form-control' } %>
+    </div>
+
+  <div class="field">
+    <%= form.label :corriente %>
+    <%= form.check_box :corriente %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ahorro %>
+    <%= form.check_box :ahorro %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

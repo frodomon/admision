@@ -1,0 +1,127 @@
+<%= form_with(model: reniec, local: true) do |form| %>
+  <% if reniec.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reniec.errors.count, "error") %> prohibited this reniec from being saved:</h2>
+
+      <ul>
+      <% reniec.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dni %>
+    <%= form.text_field :dni %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :second_last_name %>
+    <%= form.text_field :second_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genre %>
+    <%= form.text_field :genre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthdate %>
+    <%= form.date_select :birthdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth_departamento %>
+    <%= form.text_field :birth_departamento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth_provincia %>
+    <%= form.text_field :birth_provincia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth_distrito %>
+    <%= form.text_field :birth_distrito %>
+  </div>
+
+  <div class="field">
+    <%= form.label :degree %>
+    <%= form.text_field :degree %>
+  </div>
+
+  <div class="field">
+    <%= form.label :civil_state %>
+    <%= form.text_field :civil_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :register %>
+    <%= form.date_select :register %>
+  </div>
+
+  <div class="field">
+    <%= form.label :father_name %>
+    <%= form.text_field :father_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mother_name %>
+    <%= form.text_field :mother_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :emission_date %>
+    <%= form.date_select :emission_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :restriction %>
+    <%= form.text_field :restriction %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departamento %>
+    <%= form.text_field :departamento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :provincia %>
+    <%= form.text_field :provincia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :distrito %>
+    <%= form.text_field :distrito %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :due_date %>
+    <%= form.date_select :due_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

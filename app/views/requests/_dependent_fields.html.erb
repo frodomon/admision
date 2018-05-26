@@ -1,0 +1,20 @@
+<tr id='content_details'>
+  <td>
+  	<%= f.text_field :name, class: 'form-input' %>
+  </td>
+  <td>
+  	<%= f.text_field :last_name, class: 'form-input' %>
+  </td>
+  <td>
+  	<%= f.text_field :second_last_name, class: 'form-input' %>
+  </td>
+  <td>
+  	<%= f.text_field :birthdate, class: 'form-input' %>
+  </td>
+  <td align='center'>
+    <%= f.hidden_field :_destroy %>
+    <button class="btn btn-danger btn-circle remove_row_fields" type="button">
+      <i class="fa fa-times"></i>
+    </button>
+  </td>
+</tr>

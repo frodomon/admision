@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reniecs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dni</th>
+      <th>Last name</th>
+      <th>Second last name</th>
+      <th>Name</th>
+      <th>Genre</th>
+      <th>Birthdate</th>
+      <th>Birth departamento</th>
+      <th>Birth provincia</th>
+      <th>Birth distrito</th>
+      <th>Degree</th>
+      <th>Civil state</th>
+      <th>Height</th>
+      <th>Register</th>
+      <th>Father name</th>
+      <th>Mother name</th>
+      <th>Emission date</th>
+      <th>Restriction</th>
+      <th>Departamento</th>
+      <th>Provincia</th>
+      <th>Dsitrito</th>
+      <th>Address</th>
+      <th>Due date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reniecs.each do |reniec| %>
+      <tr>
+        <td><%= reniec.doi %></td>
+        <td><%= reniec.last_name %></td>
+        <td><%= reniec.second_last_name %></td>
+        <td><%= reniec.name %></td>
+        <td><%= reniec.genre %></td>
+        <td><%= reniec.birthdate %></td>
+        <td><%= reniec.birth_departamento %></td>
+        <td><%= reniec.birth_provincia %></td>
+        <td><%= reniec.birth_distrito %></td>
+        <td><%= reniec.degree %></td>
+        <td><%= reniec.civil_state %></td>
+        <td><%= reniec.height %></td>
+        <td><%= reniec.register %></td>
+        <td><%= reniec.father_name %></td>
+        <td><%= reniec.mother_name %></td>
+        <td><%= reniec.emission_date %></td>
+        <td><%= reniec.restriction %></td>
+        <td><%= reniec.departamento %></td>
+        <td><%= reniec.provincia %></td>
+        <td><%= reniec.distrito %></td>
+        <td><%= reniec.address %></td>
+        <td><%= reniec.due_date %></td>
+        <td><%= link_to 'Show', reniec %></td>
+        <td><%= link_to 'Edit', edit_reniec_path(reniec) %></td>
+        <td><%= link_to 'Destroy', reniec, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reniec', new_reniec_path %>

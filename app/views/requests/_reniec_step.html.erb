@@ -1,0 +1,89 @@
+<div class="title">
+	<h2 class="form-title">¡Hola!</h2>
+	<h2 class="form-title">¿Eres <%= @persona.name %> <%= @persona.last_name %> <%= @persona.second_last_name %>?</h2>
+</div>
+<div class="centered-form-flex-row full-width" style="margin:2rem 0 6rem 0;">
+	<div class="col-3 col-lg-3 col-md-3" style="text-align: center;">
+		<%= form.radio_button :reniec, true %>
+  	<%= label_tag(:reniec_true, "Si") %>
+	</div>
+	<div class="col-3 col-lg-3 col-md-3" style="text-align: center;">		
+		<%= form.radio_button :reniec, false %>
+  	<%= label_tag(:reniec_false, "No") %>	
+	</div>
+</div>
+
+<section id="verifyData">
+	<div class="verification col-12 col-lg-12 col-md-12">
+		<div class="subtitle">
+			<h3 class="form-subtitle">Permítenos conocer más de ti</h3>
+		</div>
+
+		<div class="row">
+			<div class="form-group col-6 col-lg-6 col-md-6 departamento">
+				<label class="form-label control-label">¿En qué departamento naciste?</label>
+	      <select id="departamento" class="form-select form-control vdepr">
+	        <option value = "default" selected>Seleccione un Departamento</option>
+	      </select>
+			</div>
+			<div class="form-group col-6 col-lg-6 col-md-6">
+				<label class="form-label control-label">¿En qué provincia naciste?</label>
+				<select id="provincia" class="form-select form-control vpror">
+        <option value = "default" selected>Seleccione una Provincia</option>
+      </select>
+			</div>		
+		</div>
+		<div class="row">
+			<div class="form-group col-6 col-lg-6 col-md-6">
+				<label class="form-label control-label">¿Cuál es el primer nombre de tu madre?</label>
+					<input class="form-input form-control control vmomr" type="text">
+			</div>
+		</div>
+	</div>
+	<div class="pep col-12 col-lg-12 col-md-12">
+		<div class="col-lg-12 form-data">
+	  	<p>¿Desempeñas o has desempeñado algún cargo público o función importante en una organización internacional durante los últimos 5 años en el Perú o en el extranjero?</p>
+		</div>
+		<div class="centered-form-flex-row full-width" style="margin:2rem 0 6rem 0;">
+			<div class="col-3 col-lg-3 col-md-3" style="text-align: center;">
+				<%= form.radio_button :pep, true %>
+      	<%= label_tag(:pep_true, "Si") %>
+			</div>
+			<div class="col-3 col-lg-3 col-md-3" style="text-align: center;">
+				<%= form.radio_button :pep, false %>
+      	<%= label_tag(:pep_false, "No") %>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="field">
+  <%= form.hidden_field :name %>
+</div>
+<div class="field">
+  <%= form.hidden_field :last_name %>
+</div>
+<div class="field">
+  <%= form.hidden_field :second_last_name %>
+</div>
+<div class="field">
+  <%= form.hidden_field :genre %>
+</div>
+<div class="field" style="display:none;">
+	<%= form.date_select :birthday, start_year: 1900 %>
+</div>
+<div class="field">
+  <%= form.hidden_field :civil_state %>
+</div>
+
+<% content_for :javascript do %>
+	<script type="text/javascript">
+		$(function() {
+	    $('.i-checks').iCheck({
+        radioClass: 'iradio_square-green',
+    	});
+		});
+	</script>
+<% end %>
+
+<%= javascript_tag "persona = #{@persona.to_json.html_safe};" %>

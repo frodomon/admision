@@ -1,0 +1,7 @@
+<%= flash_errors_for @requests %>
+<section id='request' class='centered-form-flex'>
+  <%= form_with(model: request, local: true, id:"submit-form", html: {class: 'request centered-form-flex'})  do |form| %>
+    <%= form_errors_for @requests %>
+  <% end %>
+</section>
+<%= link_to 'Back', requests_path %>

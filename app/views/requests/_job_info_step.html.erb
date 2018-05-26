@@ -1,0 +1,81 @@
+<div class="title">
+  <h2 class="form-title">¿A qué te dedicas?</h2>
+</div>
+
+<div class="col-12 col-lg-12 col-md-12">
+  <div class="row">
+    <div class="form-group col-6 col-lg-6 col-md-6 col-offset-3 col-lg-offset-3 col-md-offset-3">
+      <%= form.label :job_type_id, 'Tipo de Trabajo', class: 'form-label control-label' %>
+      <%= form.collection_select :job_type_id, JobType.order(:name), :id, :name , options = {  :prompt => 'Seleccione un tipo de Trabajo'}, html_options = { class: 'select2_demo_1 form-control form-select' } %>
+    </div>
+  </div>
+</div>
+
+<div class="job col-12 col-lg-12 col-md-12">
+  <div class="row">
+    <div class="form-group col-4 col-lg-4 col-md-4">
+      <%= form.label :job, 'Ocupación', class: 'form-label' %>
+      <%= form.text_field :job, class: 'form-input' %>
+    </div>
+    <div class="form-group col-4 col-lg-4 col-md-4">
+      <%= form.label :profession, 'Profesión', class: 'form-label' %>
+      <%= form.text_field :profession, class: 'form-input' %>
+    </div>
+
+    <div class="form-group col-4 col-lg-4 col-md-4">
+      <%= form.label :economy_sector_id, 'Sector Económico', class: 'form-label' %>
+      <%= form.collection_select :economy_sector_id, EconomySector.order(:name), :id, :name , options = {  :prompt => 'Seleccione un Sector Económico'}, html_options = { class: 'select2_demo_1 form-control form-select' } %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-4 col-lg-4 col-md-4">
+      <%= form.label :work_years, 'Tiempo de Servicio (años)', class: 'form-label' %>
+      <%= form.number_field :work_years, class: 'form-input' %>
+    </div>
+    <div class="form-group col-4 col-lg-4 col-md-4">
+      <%= form.label :job_title, 'Cargo', class: 'form-label' %>
+      <%= form.text_field :job_title, class: 'form-input' %>
+    </div>
+    <div class="form-group col-4 col-lg-4 col-md-4">
+      <%= form.label :salary_id, 'Salario', class: 'control-label form-label' %>
+      <%= form.collection_select :salary_id, Salary.order(:id), :id, :range , options = {  :prompt => 'Seleccione el Rango'}, html_options = { class: 'select2_demo_1 form-control form-select' } %>
+    </div>
+  </div>    
+</div>
+
+<div class="company col-12 col-lg-12 col-md-12">
+	<h3 class="form-subtitle">¿Cuál es tu centro de trabajo?</h3>
+  <div class="row">
+    <div class="form-group col-6 col-lg-6 col-md-6">
+      <%= form.label :company, 'Nombre', class: 'form-label' %>
+      <%= form.text_field :company, class: 'form-input' %>
+    </div>
+    <div class="form-group col-6 col-lg-6 col-md-6">
+      <%= form.label :economy_activity_id, 'Actividad Económica', class: 'form-label' %>
+      <%= form.collection_select :economy_activity_id, EconomyActivity.order(:name), :id, :name , options = {  :prompt => 'Seleccione una Actividad Economica'}, html_options = { class: 'select2_demo_1 form-control form-select' } %>
+    </div>
+  </div>
+</div>
+
+<div class="business col-12 col-lg-12 col-md-12">
+  <h3 class="form-subtitle">Por favor ingresa tu RUC</h3>
+  <div class="row centered-form-flex-row">
+    <div class="form-group col-4 col-lg-4 col-md-4">
+      <%= form.label :ruc, 'RUC', class: 'form-label' %>
+      <%= form.text_field :ruc, class: 'form-input' %>
+    </div>
+    <div class="form-group col-4 col-lg-4 col-md-4">
+      <%= form.label :income, 'Ingresos Mensuales', class: 'form-label' %>
+      <%= form.number_field :income, class: 'form-input' %>
+    </div>
+  </div>
+</div>
+<div class="college col-12 col-lg-12 col-md-12">
+  <h3 class="form-subtitle">¿Cuál es tu centro de estudios?</h3>
+  <div class="row centered-form-flex-row">
+    <div class="form-group col-6 col-lg-6 col-md-6">
+      <%= form.label :college, 'Nombre', class: 'form-label' %>
+      <%= form.text_field :college, class: 'form-input' %>
+    </div>
+  </div>
+</div>

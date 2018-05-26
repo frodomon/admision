@@ -1,0 +1,70 @@
+<% provide(:title, "AELUCOOP - Admisión de Socios") %>
+<p id="notice"><%= notice %></p>
+  <div class="wrapper wrapper-content animated fadeInRight no-padding">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h1>Solicitudes</h1>
+        </div>
+        <div class="ibox-content">
+          <div class='table-responsive'>
+            <table class="table table-stripped table-bordered table-hover datatable">
+              <thead>
+                <tr>
+                  <th>Estado</th>
+                  <th>DNI</th>
+                  <th>Nombre</th>
+                  <th>Apellido Paterno</th>
+                  <th>Apellido Materno</th>
+                  <th>Email</th>
+                  <th>Celular</th>
+                  <th>Telefono</th>
+                  <th></th>
+                  <th></th>
+                  <th></th> 
+                </tr>
+              </thead>
+              <tbody>
+                <% @requests.each do |request| %>
+                  <tr>
+                    <% case request.status
+                        when 0
+                          status = "Creado"
+                        when 1
+                          status = "Revisado"
+                        when 2
+                          status = "Aprobado"
+                        when 3
+                          status = "Rechazado"
+                        end
+                        %>
+                    <td><%= status %></td>
+                    <td><%= request.dni %></td>
+                    <td><%= request.name %></td>
+                    <td><%= request.last_name %></td>
+                    <td><%= request.second_last_name %></td>
+                    <td><%= request.email %></td>
+                    <td><%= request.mobile %></td>
+                    <td><%= request.telephone %></td>
+                    <td><%= link_to 'Ver', request %></td>
+                    <td><%= link_to 'Editar', edit_request_path(request) %></td>
+                    <td><%= link_to 'Eliminar', request, method: :delete, data: { confirm: '¿Estas Seguro?' } %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+
+<%= link_to 'New Request', new_request_path %>
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+        load_table_controls('datatable','Solicitudes');
+    });
+  </script>
+<% end %>

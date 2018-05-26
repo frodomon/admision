@@ -1,0 +1,19 @@
+<tr id='content_details'>
+  <td>
+  	<%= f.collection_select :bank_id, Bank.order(:name), :id, :name , options = {  :prompt => 'Seleccione un Banco'}, html_options = { class: 'select2_demo_1 form-control form-select' } %>
+  </td>
+  <td>
+  	<%= f.check_box :corriente %>
+  </td>
+  <td>
+  	<%= f.check_box :ahorro %>
+  </td>
+  <td align='center'>
+    <%= f.hidden_field :_destroy %>
+    <button class="btn btn-danger btn-circle remove_row_fields" type="button">
+      <i class="fa fa-times"></i>
+    </button>
+  </td>
+   
+  
+</tr>

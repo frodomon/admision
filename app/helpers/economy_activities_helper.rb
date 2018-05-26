@@ -1,0 +1,2 @@
+module EconomyActivitiesHelper
+end

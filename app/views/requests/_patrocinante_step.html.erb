@@ -1,0 +1,25 @@
+<div class="title">
+  <h2 class="form-title">¿Cuáles son los datos de tu patrocinante?</h2>
+</div>
+<div class='col-lg-12 col-md-12 col-12'>
+  <div class="row">
+    <div class="form-group col-6 col-lg-6 col-md-6">
+      <%= form.label :patron_name, 'Nombre', class: 'form-label control-label' %>
+      <%= form.text_field :patron_name, class: 'form-input form-control control' %>
+    </div>
+    <div class="form-group col-6 col-lg-6 col-md-6">
+      <%= form.label :patron_last_name, 'Apellidos', class: 'form-label control-label' %>
+      <%= form.text_field :patron_last_name, class: 'form-input form-control control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-6 col-lg-6 col-md-6">
+      <%= form.label :patron_doi, 'DNI', class: 'form-label control-label' %>
+      <%= form.text_field :patron_doi, class: 'form-input form-control control' %>
+    </div>
+    <div class="form-group col-6 col-lg-6 col-md-6">
+      <%= form.label :patron_mobile, 'Celular', class: 'form-label control-label' %>
+      <%= form.text_field :patron_mobile, class: 'form-input form-control control' %>
+    </div>
+  </div>
+</div>

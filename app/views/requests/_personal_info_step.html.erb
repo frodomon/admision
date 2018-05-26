@@ -1,0 +1,22 @@
+<div class="col-lg-12 title">
+  <h3 class="form-title">Por favor ingresa tus datos</h3>
+</div>
+<div class= "col-lg-4 <%= field_class(@request, :dni) %>">
+  <%= form.label :dni, 'DNI', class: 'form-label control-label' %>
+  <%= form.text_field :dni, class: 'form-input form-control control' %>
+</div>
+
+<div class= "col-lg-4 <%= field_class(@request, :email) %>">
+  <%= form.label :email, 'Correo Electrónico', class: 'form-label control-label' %>
+  <%= form.email_field :email, class: 'form-input form-control control' %>
+</div>
+
+<div class= "col-lg-4 <%= field_class(@request, :mobile) %>">
+  <%= form.label :mobile, 'Celular', class: 'form-label control-label' %>
+  <%= form.telephone_field :mobile, class: 'form-input form-control control' %>
+</div>
+
+<div class="col-lg-6 form-data">
+  <p>Tus datos serán tratados de forma confidencial y segura de acuerdo a la Ley de Protección de Datos Personales.</p>
+  <p>La información y declaraciones proporcionadas en esta solicitud tienen carácter de declaración jurada.</p>
+</div>

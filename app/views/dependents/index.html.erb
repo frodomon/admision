@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dependents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Request</th>
+      <th>Name</th>
+      <th>Last name</th>
+      <th>Second last name</th>
+      <th>Birthdate</th>
+      <th>Relationship</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dependents.each do |dependent| %>
+      <tr>
+        <td><%= dependent.request %></td>
+        <td><%= dependent.name %></td>
+        <td><%= dependent.last_name %></td>
+        <td><%= dependent.second_last_name %></td>
+        <td><%= dependent.birthdate %></td>
+        <td><%= dependent.relationship %></td>
+        <td><%= link_to 'Show', dependent %></td>
+        <td><%= link_to 'Edit', edit_dependent_path(dependent) %></td>
+        <td><%= link_to 'Destroy', dependent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dependent', new_dependent_path %>

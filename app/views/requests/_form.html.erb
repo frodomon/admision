@@ -1,0 +1,17 @@
+<%= flash_errors_for @requests %>
+<section id='request' class='centered-form-flex'>
+  <%= form_with(model: request, local: true, id:"submit-form", html: {class: 'request centered-form-flex'})  do |form| %>
+    <%= form_errors_for @requests %>
+
+    <%= render "#{@request.current_step}_step", :form => form %>
+
+    <div class="actions">
+      <%= if @request.first_step? 
+            link_to 'Regresar', home_path, class: 'back-btn' 
+          end %>
+      <%= form.submit "Regresar", name:"back_button", id: 'back-btn', class: 'back-btn' unless @request.first_step? %>
+      <%= form.submit "Continuar", id: 'submit-btn', class: 'go-btn' %>
+      
+    </div>
+  <% end %>
+</section>

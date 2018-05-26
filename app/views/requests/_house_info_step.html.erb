@@ -1,0 +1,72 @@
+<div class="title">
+  <h2 class="form-title">¿Dónde vives?</h2>
+</div>
+<div class="col-12 col-lg-12 col-md-12">
+  <div class="row">
+    <div class="form-group col-2 col-lg-2 col-md-2">
+      <%= form.label :access, 'Vía', class: 'form-label' %>
+      <%= select_tag 'Vía', "<option value='0' selected='selected'></option><option value='1'>Alameda</option><option value='2'>Avenida</option><option value='3'>Bajada</option><option value='4'>calle</option><option value='5'>Centro Comercial</option><option value='6'>Carretera</option><option value='7'>Galería Comercial</option><option value='8'>Jirón</option><option value='9'>Malecón</option><option value='10'>Óvalo</option>".html_safe, {class: 'form-control form-select', id:'select_via'} %>
+      <%= form.hidden_field :access, class: 'form-input'  %>
+    </div>
+    <div class="col-6 col-lg-6 col-md-6 <%= field_class(@request, :address) %>">
+      <%= form.label :address, 'Direccion', class: 'form-label control-label' %>
+      <%= form.text_field :address, class: 'form-input form-control control'  %>
+    </div>
+    <div class="form-group col-1 col-lg-1 col-md-1">
+      <%= form.label :number, 'Numero', class: 'form-label' %>
+      <%= form.text_field :number, class: 'form-input'  %>
+    </div>
+    <div class="form-group col-1 col-lg-1 col-md-1">
+      <%= form.label :manzana, 'Mz', class: 'form-label' %>
+      <%= form.text_field :manzana, class: 'form-input'  %>
+    </div>
+    <div class="form-group col-1 col-lg-1 col-md-1">
+      <%= form.label :lote, 'Lote', class: 'form-label' %>
+      <%= form.text_field :lote, class: 'form-input'  %>
+    </div>
+    <div class="form-group col-1 col-lg-1 col-md-1">
+      <%= form.label :apartment, 'Dpto', class: 'form-label' %>
+      <%= form.text_field :apartment, class: 'form-input'  %>
+    </div>
+  </div>
+</div>
+<div class="col-12 col-lg-12 col-md-12">
+  <div class="row">
+    <div class="form-group col-4 col-lg-4 col-md-4 departamento">
+      <label class="form-label">Departamento:</label>
+      <select id="departamento" class="form-select form-control">
+        <option value = "default" selected>Seleccione un Departamento</option>
+      </select>
+    </div>
+    <div class="form-group col-4 col-lg-4 col-md-4 provincia">
+      <label class="form-label">Provincia:</label>
+      <select id="provincia" class="form-select form-control">
+        <option value = "default" selected>Seleccione una Provincia</option>
+      </select>
+    </div>
+    <div class="form-group col-4 col-lg-4 col-md-4 distrito">
+      <label class="form-label">Distrito:</label>
+      <select id="distrito" class="form-select form-control">
+        <option value = "default" selected>Seleccione un Distrito</option>
+      </select>
+      <%= form.hidden_field :ubigeo_id %>
+    </div>
+  </div>
+</div>
+<div class="col-12 col-lg-12 col-md-12">
+  <div class="row">
+    <div class="form-group col-4 col-lg-4 col-md-4">
+      <%= form.label :urbanization, 'Urbanizacion', class: 'form-label' %>
+      <%= form.text_field :urbanization, class: 'form-input' %>
+    </div>
+    <div class="form-group col-4 col-lg-4 col-md-4">
+      <%= form.label :telephone, 'Telefono', class: 'form-label' %>
+      <%= form.text_field :telephone, class: 'form-input' %>
+    </div>
+    <div class="form-group col-4 col-lg-4 col-md-4">
+      <%= form.label :property_house, 'Tu casa es', class: 'form-label' %>
+      <%= select_tag 'Casa', "<option value='0' selected='selected'></option><option value='1'>Propia</option><option value='2'>Alquilada</option>".html_safe, {class: 'form-control form-select', id:'select_casa'} %>
+      <%= form.hidden_field :property_house, class: 'form-input' %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @economy_activity.ciiu %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @economy_activity.name %>
+</p>
+
+<%= link_to 'Edit', edit_economy_activity_path(@economy_activity) %> |
+<%= link_to 'Back', economy_activities_path %>

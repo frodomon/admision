@@ -1,0 +1,421 @@
+<p id="notice"><%= notice %></p>
+<table class="ftable cabecera" cellpadding="7">
+    <tr>
+    <td style='font-size:22px; font-weight:bold; font-family:"Arial"; color:#FFFFFF;'>Ficha de Datos de Socio</td>
+    <td rowspan="2" style='width:28%; font-family:"Arial"; color:#FFFFFF;'><img src="<%= image_url 'logo.png' %>"></td>
+  </tr>
+  <tr>
+    <td style="font-size:18px; color:#FFFFFF;">Persona Natural</td>
+  </tr>
+  </table>
+  <table class="ftable">
+    <tr>
+      <td><img src="<%= image_url 'NotaAelucoop.png' %>" height="190px"></td>
+    <td>
+      <br/>
+      <table class="ftable" style="border-width:0px;">
+        <tr><td style='font-family: "Arial"; font-size: 8px;'>TIPO DE SOCIO:</td></tr>
+      <tr><td><div style="border:1px solid;width:250px;height:35px;border-radius:10px;"></div></td></tr>
+      </table>
+      <br/>
+      <table class="ftable" style="border-width:0px;">
+        <tr>
+        <td style='width:4%;' class="subtitulo">C&oacute;digo:</td>
+        <td><div style="border:1px solid;width:100px;height:35px;border-radius:10px;"></div></td>
+        <td/>
+        <td style='width:20%;' class="subtitulo">Fecha de Ingreso:</td>
+        <td><div style="border:1px solid;width:100px;height:35px;border-radius:10px;"></div></td>
+      </tr>
+      </table>
+      <br/>
+      <table class="ftable table_campos">
+        <tr>
+        <td style="width:5%">Agencia:</td>
+        <td>--agencia--</td>
+      </tr>
+      </table>
+      <table class="ftable table_campos">
+        <tr>
+        <td style="width:24%">Responsable de la Inscripci&oacute;n:</td>
+        <td>--responsable--</td>
+        <td>Firma:</td>
+        <td>--firma--</td>
+      </tr>
+      </table>
+      <br/>
+    </td>
+    <td style="border-width:1px;width:20%;text-align:center;">
+    Foto
+    </td>
+  </tr>
+  </table>
+  <table class="ftable table-titulo">
+    <tr>
+      <td style="width:20%" class="titulo">Datos del Solicitante</td>
+    <td class="titulo_derecha">(Id&eacute;ntica al Documento de Identidad)</td>
+  </tr>
+  </table>
+  <p/>
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:10.5%">Apellido Paterno:</td>
+    <td style="width:20%"><%= @request.last_name %></td>
+    <td style="width:11%">Apellido Materno:</td>
+    <td style="width:20%"><%= @request.second_last_name %></td>
+    <td style="width:4%">Nombres:</td>
+    <td><%= @request.name %></td>
+  </tr>
+  </table>
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:3%">D.N.I.:</td>
+    <td style="width:14%"><%= @request.dni %></td>
+    <td style="width:13.5%">Fecha de Nacimiento:</td>
+    <td style="width:16%"><%= @request.birthday %></td>
+    <td style="width:3%">Sexo:</td>
+    <td style="width:14%"><%= @request.genre %></td>
+    <td style="width:8%">Estado Civil:</td>
+    <td><%= @request.civil_state %></td>
+  </tr>
+  <table class="ftable table_campos">
+    <tr>
+    <td style="width:5.5%">Profesi&oacute;n:</td>
+    <td style="width:16%"><%= @request.profession %></td>
+    <td style="width:5.5%">Ocupaci&oacute;n:</td>
+    <td><%= @request.job %></td>
+  </tr>
+  </table>
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:25%" class="subtitulo">DATOS DE SU DOMICILIO</td>
+    <td style="width:14%">Tipo de Vivienda:</td>
+    <%  if (@request.property_house == 1) %>
+      <td> Propia</td>
+    <%  elsif (@request.property_house == 2) %>
+      <td>Alquilada</td>
+    <%  end %>
+    <td></td>
+  </tr>
+  </table>
+  <table class="ftable table_campos">
+    <tr>
+      <% 
+        direccion = @request.address
+        unless @request.number.nil?
+          direccion = direccion + " " + @request.number.to_s
+        end
+        unless @request.manzana.empty?
+          direccion = direccion + " Mz " + @request.manzana 
+        end
+        unless @request.lote.empty?
+          direccion = direccion + " Lote " + @request.lote 
+        end
+        unless @request.apartment.empty?
+          direccion = direccion + " Dpto " + @request.apartment 
+        end
+      %>
+      <td><%= direccion %></td>
+  </tr>
+  </table>
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:7%">Urbanizaci&oacute;n:</td>
+    <td style="width:17%"><%= @request.urbanization %></td>
+    <td style="width:4%">Distrito:</td>
+    <td style="width:20%"></td>
+    <td style="width:5%">Provincia:</td>
+    <td style="width:19%"></td>
+    <td style="width:6%">Departamento:</td>
+    <td></td>
+  </tr>
+  </table>
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:4%">Tel&eacute;fono:</td>
+    <td style="width:20%"><%= @request.telephone %></td>
+    <td style="width:4%">Celular:</td>
+    <td style="width:20%"><%= @request.mobile %></td>
+    <td style="width:4.5%">E-mail:</td>
+    <td><%= @request.email %></td>
+  </tr>
+  </table>
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:17%" class="subtitulo">CENTRO DE TRABAJO:</td>
+    <td><%= @request.company %></td>
+    <td style="width:5%">Actividad:</td>
+    <% if @request.economy_activity_id %>
+        <td style="width:40%"><%= EconomyActivity.find(@request.economy_activity_id).name %></td>
+    <% else %>
+        <td style="width:40%">---</td>
+    <% end  %>
+  </tr>
+  </table>  
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:12%">Tiempo de servicio:</td>
+      <% if @request.work_years %>
+        <td style="width:14%"><%= @request.work_years %> años</td>
+      <% else %>
+        <td style="width:14%">---</td>
+      <% end %>
+      <td style="width:3%">Cargo:</td>
+      <% if @request.job_title.nil? %>
+        <td style="width:40%"><%= @request.job_title %></td>
+      <% else %>
+        <td style="width:40%">---</td>
+      <% end %>
+      <td style="width:8.5%">Sueldo Bruto:</td>
+    <% if @request.salary_id %>
+      <td><%= Salary.find(@request.salary_id).range %></td>
+    <% else %>
+      <td>---</td>
+    <% end  %>
+  </tr>
+  </table>
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:17.5%" class="subtitulo">CENTRO DE ESTUDIOS:</td>
+      <% if (@request.college.empty?) %>
+        <td>---</td>
+      <% else %>
+        <td><%= @request.college  %></td>
+      <% end %>
+  </tr>
+  </table>
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:13.5%" class="subtitulo">NEGOCIO PROPIO</td>
+    <td style="width:5%"></td>
+    <td style="width:12%">Nombre Comercial:</td>
+    <td></td>
+  </tr>
+  </table>
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:4%">R.U.C.</td>
+      <% if (@request.ruc.empty?) %>
+        <td style="width:25%">---</td>
+      <% else %>
+      <td style="width:25%"><%= @request.ruc %></td>
+        
+      <% end %>
+      <td style="width:4%">Tel&eacute;fono:</td>
+      <td style="width:25%"><%=%></td>
+      <td style="width:11.5%">Ventas Mensuales:</td>
+      <% if (@request.ruc.nil?) %>
+        <td style="width:25%">---</td>
+      <% else %>
+        <td><%=  @request.income %></td>
+      <% end %>
+    </tr>
+  </table>
+  <br/>
+  <table class="ftable table-titulo">
+    <tr>
+      <td style="width:25%" class="titulo">Datos del C&oacute;nyuge o Tutor</td>
+    <td class="titulo_derecha"/>
+  </tr>
+  </table>
+  <p/>
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:10.5%">Apellido Paterno:</td>
+      <% if (@request.spouse_last_name.empty?) %>
+        <td style="width:20%">---</td>
+      <% else %>
+        <td style="width:20%"><%= @request.spouse_last_name %></td>
+      <% end %>
+      
+      <td style="width:11%">Apellido Materno:</td>
+      <% if (@request.spouse_second_last_name.empty?) %>
+        <td style="width:20%">---</td>
+      <% else %>
+        <td style="width:20%"><%= @request.spouse_second_last_name %></td>
+      <% end %>
+      
+      <td style="width:4.5%">Nombres:</td>
+      <% if (@request.spouse_name.empty?) %>
+        <td style="width:25%">---</td>
+      <% else %>
+        <td><%= @request.spouse_name %></td>
+      <% end %>
+      
+  </tr>
+  </table>
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:3%">D.N.I.:</td>
+      <% if (@request.spouse_doi.empty?) %>
+      <td style="width:14%">---</td>
+      <% else %>
+        <td style="width:14%"><%= @request.spouse_doi %></td>
+      <% end %>
+     
+    <td style="width:6%">Profesi&oacute;n:</td>
+     <% if (@request.spouse_profession.empty?) %>
+     <td style="width:30%">---</td>
+      <% else %>
+        <td style="width:30%"><%= @request.spouse_profession %></td>
+      <% end %>
+    
+    <td style="width:7%">Ocupaci&oacute;n:</td>
+      <% if (@request.spouse_ocupation.empty?) %>
+        <td>---</td>
+      <% else %>
+        <td><%= @request.spouse_ocupation %></td>
+      <% end %>
+    
+  </tr>
+  </table>
+  <br/>
+  <table class="ftable table-titulo">
+    <tr>
+      <td style="width:9%" class="titulo">Hijos</td>
+    <td class="titulo_derecha"/>
+  </tr>
+  </table>
+  <p/>
+  <table class="ftable">
+  <tr>
+     <th style="width:48%">Nombres</th>
+     <th style="width:48%">Apellido Paterno</th>
+     <th style="width:48%">Apellido Materno</th>
+     <th>Fecha de Nacimiento</th>
+  </tr>
+  <tr style="height:20px;">
+      <td style="border-bottom: 1px dotted black;"></td>
+    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+  </tr>
+  <tr style="height:20px;">
+      <td style="border-bottom: 1px dotted black;"></td>
+    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+  </tr>
+  <tr style="height:20px;">
+      <td style="border-bottom: 1px dotted black;"></td>
+    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+  </tr>
+  <tr style="height:20px;">
+      <td style="border-bottom: 1px dotted black;"></td>
+    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+  </tr>
+  </table>
+  <div class="pagebreak">
+  <table class="ftable">
+    <tr>
+    <td style='width:25%' class="titulo_derecha"/>
+    <td class="titulo">Declaraci&oacute;n Jurada de Persona Expuesta Pol&iacute;ticamente</td>
+    <td style='width:25%' class="titulo_derecha"/>
+  </tr>
+  </table>
+  <table class="ftable" style='font-family:"Arial";font-size:9px;'>
+    <tr><td>Declaro que:</td></tr>
+  </table>
+  <table class="ftable" style='font-weight:bold;font-align:"center";font-family:"Arial";font-size:8.5px;text-align:center;'>
+    <tr>
+      <% if (@request.pep === false) %>
+        <td><span style="font-size:22px">&#9679;</span> No ocupo un cargo p&uacute;blico.*</td>
+        <td><span style="font-size:22px">&#9679;</span> No he ocupado un cargo p&uacute;blico.*</td>
+        <td><span style="font-size:22px">&#9679;</span> No tengo v&iacute;nculos familiares con personas que ocupan o han ocupado cargos p&uacute;blicos.*</td>
+      <% else %>
+        <td><span style="font-size:22px">&#9675;</span> No ocupo un cargo p&uacute;blico.*</td>
+        <td><span style="font-size:22px">&#9675;</span> No he ocupado un cargo p&uacute;blico.*</td>
+        <td><span style="font-size:22px">&#9675;</span> No tengo v&iacute;nculos familiares con personas que ocupan o han ocupado cargos p&uacute;blicos.*</td>
+      <% end %>
+  </tr>
+  </table>
+  <table class="ftable" style='text-align:center;font-family:"Arial";font-size:9px;'>
+    <tr><td>(*) De tener una respuesta afirmativa a una de las opciones antes mencionadas, el interesado deber&aacute; llenar el formato adicional que le ser&aacute; proporcionado.</td></tr>
+  </table>
+  <br/>
+  <table class="ftable" >
+    <tr>
+    <td style='width:35%' class="titulo_derecha"/>
+    <td class="titulo">Declaraci&oacute;n Jurada del Titular</td>
+    <td style='width:35%' class="titulo_derecha"/>
+  </tr>
+  </table>
+  <table class="ftable" style='font-family:"Arial";font-size:9px;'>
+    <tr><td>
+  <p style="text-align:justify">Certifico que las respuestas y declaraciones contenidas en esta Ficha de Inscripci&oacute;n son ver&iacute;dicas y se ajustan a la realidad y, de no serlo, cualquier declaraci&oacute;n falsa hecha por el suscrito, voluntaria o involuntariamente, invalida la presente solicitud y libera de toda responsabilidad y compromiso a AELUCOOP, quedando la inscripci&oacute;n nula y sin efecto. Me obligo a que cualquier modificaci&oacute;n que se efect&uacute;e a la informaci&oacute;n proporcionada ser&aacute; comunicada a AELUCOOP, a m&aacute;s tardar dentro de los tres d&iacute;as h&aacute;biles siguientes de la fecha de modificaci&oacute;n.</p>
+  <p style="text-align:justify">Las informaciones y declaraciones proporcionadas en la presente solicitud tienen car&aacute;cter de declaraci&oacute;n jurada y, en tal sentido, nos sometemos a las sanciones administrativas o penales que el ordenamiento legal indique.</p>
+  </td></tr>
+  </table>
+  <br/>
+  <table class="ftable" >
+    <tr>
+    <td style='width:13%;'/>
+    <td align="center" valign="bottom"><div style='border:1px solid;border-radius:10px;height:90px;width:90px;'/></td>
+    <td align="center" valign="bottom"><div style='border:1px solid;border-radius:10px;height:180px;width:360px;'/></td>
+    <td style='width:13%;'/>
+  </tr>
+  <tr>
+      <td></td>
+    <td style='font-weight:bold;font-align:"center";font-family:"Arial";font-size:9px;text-align:center;'>Huella Digital</td>
+    <td style='font-weight:bold;font-align:"center";font-family:"Arial";font-size:9px;text-align:center;'>Firma del Titular (Id&eacute;ntica al Documento de Identidad)</td>
+    <td></td>
+  </tr>
+  </table>
+  <br/>
+  <table class="ftable" >
+    <tr>
+    <td class="titulo">Datos del Patrocinante</td>
+  </tr>
+  </table>
+  <p/>
+  <table class="ftable table_campos">
+    <tr>
+      <td style="width:12.5%">Apellidos y Nombres:</td>
+    <td style="width:70%"><%= @request.patron_last_name + " " + @request.patron_name %></td>
+    <td style="width:10%">C&oacute;digo de Socio:</td>
+    <td></td>
+  </tr>
+  </table>
+  <table class="ftable" >
+    <tr style="height:50px;">
+      <td style="width:30%;"/>
+    <td style="border-bottom:1px dotted black;"></td>
+    <td style="width:30%;"/>
+  </tr>
+  <tr>
+      <td style="width:30%;"/>
+    <td style='font-family: "Arial";font-weight: bold;font-size: 10px;text-align:center;'>Firma del Patrocinante</td>
+    <td style="width:30%;"/>
+  </tr>
+  </table>
+  <br/>
+  <table class="ftable" >
+    <tr>
+    <td class="titulo">Comisi&oacute;n de Admisi&oacute;n</td>
+  </tr>
+  </table>
+  <table class="ftable" >
+    <tr>
+      <td>
+    <table class="ftable" style="border:1px solid black;border-radius:10px;">
+      <tr><td style='font-family: "Arial";font-size: 10px;text-align:center;'>Aprobado por:</td></tr>
+      <tr><td style="border-bottom:1px dotted black;height:50px;"/></tr>
+      <tr><td style='font-family: "Arial";font-weight: bold;font-size: 10px;text-align:center;'>Firma y Sello</td></tr>
+    </table>
+    </td>
+    <td>
+    <table class="ftable" style="border:1px solid black;border-radius:10px;">
+      <tr><td style='font-family: "Arial";font-size: 10px;text-align:center;'>Aprobado por:</td></tr>
+      <tr><td style="border-bottom:1px dotted black;height:50px;"/></tr>
+      <tr><td style='font-family: "Arial";font-weight: bold;font-size: 10px;text-align:center;'>Firma y Sello</td></tr>
+    </table>
+    </td>
+    </tr>
+  </table>
+
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>
