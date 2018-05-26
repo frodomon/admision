@@ -12,12 +12,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 // Variables, Mixins
-@import "base/variables";
+
 @import "base/mixins";
+@import "base/variables";
+
 
 // INSPINIA Theme Elements
+@import "base/base";
+
 @import "base/typography";
 @import "base/navigation";
 @import "base/top_navigation";
@@ -25,12 +28,13 @@
 @import "base/badgets_labels";
 @import "base/elements";
 @import "base/sidebar";
-@import "base/base";
+;
 @import "base/pages";
 @import "base/chat";
 @import "base/metismenu";
 @import "base/spinners";
-@import "base/variables";
+
+
 
 // Landing page
 @import "base/landing";

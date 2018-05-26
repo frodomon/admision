@@ -28,19 +28,19 @@ html, body {
   border-color: #1ab394;
 }
 .has-warning .form-control {
-  border-color: $yellow;
+  border-color: #f8ac59; 
 }
 .has-error .form-control {
-  border-color: $red;
+  border-color: #ED5565;
 }
 .has-success .control-label {
   color: #1ab394;
 }
 .has-warning .control-label {
-  color: $yellow;
+  color: #f8ac59; 
 }
 .has-error .control-label {
-  color: $red;
+  color: #ED5565;
 }
 .btn {
   border-radius: 3px;
