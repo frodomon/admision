@@ -21,4 +21,4 @@
 //= require ubigeos
 //= require iCheck/icheck.min.js
 //= require dataTables/datatables.min.js
-//= require_tree .
+//= require requests
