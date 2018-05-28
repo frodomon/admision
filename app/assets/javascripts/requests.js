@@ -26,12 +26,14 @@ $(document).ready(function () {
 	if (document.getElementById("request_last_name")) { $("#request_last_name").val(persona.last_name); }
 	if (document.getElementById("request_second_last_name")) { $("#request_second_last_name").val(persona.second_last_name); }
   if (document.getElementById("request_genre")) { $("#request_genre").val(persona.genre); }
-  if (document.getElementById("request_birthday")) { 
+  if (document.getElementById("request_birthday_1i")) { 
+
     cumple = persona.birthdate;
-      fecha = cumple.split('-');
-      dia = fecha[2];
-      mes = fecha[1];
-      anho = fecha[0];
+    fecha = cumple.split('-');
+    dia = fecha[2];
+    mes = fecha[1];
+    anho = fecha[0];
+    alert('anho' + anho)
     $('#request_birthday_1i').val(Number(anho));
     $('#request_birthday_2i').val(Number(mes));
     $('#request_birthday_3i').val(Number(dia));
@@ -166,6 +168,7 @@ $(document).ready(function () {
 	
 	$('#search_spouse_button').click(function(event){
   	event.preventDefault();
+    debugger;
   	search = $('#search_spouse').val();
   	if (search != 0 ) {
   	  parameters = {search: search }; 

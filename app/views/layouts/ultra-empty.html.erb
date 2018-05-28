@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+
+<style>
+  table{
+    max-width: 2480px;
+    width: 100%;
+  }
+  .table_campos{
+    font-family: "Arial";
+  font-size: 9px;
+  border-bottom-style: dotted;
+  border-width: 1px;
+  height: 23px;
+  }
+  .table-titulo{
+  border-width: 0px;
+  }
+  table td{
+    width: auto;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+  th{
+  font-family: "Arial";
+  font-size: 8px;
+  font-weight: bold;
+  background-color:#D9E4EE;
+  }
+  .fila_campos {
+    border-bottom-style: dotted;
+    border-width: 1px;
+  }
+  .cabecera{
+    background-color:#0754D3;
+  }
+  .campos_round_border{
+    border-width: 1px;
+  border-radius: 20px;
+  }
+  .titulo{
+    font-weight: bold;
+  font-size: 12px;
+  font-family: "Arial";
+  color: #FFFFFF;
+  background-color:#0754D3;
+  text-align:center;
+  height: 25px;
+  }
+  .titulo_derecha{
+  font-size: 8px;
+  font-family: "Arial";
+  color: #000000;
+  background-color:#D9E4EE;
+  text-align:left;
+  }
+  .subtitulo{
+    font-family: "Arial";
+    font-weight: bold;
+  font-size: 10px;
+  }
+  .pagebreak{ 
+    page-break-before: always;
+  }
+  </style>
+</head>
+<html><body>
+<body>
+      <!-- Main view  -->
+      <%= yield %>
+  <!-- End wrapper-->
+  <!-- Include javascript per-controller - vendor plugins -->
+  <!-- Include javascript per-view -->
+  <!-- For demo purpose we include javascript in view but you can easily start SeedProject and organize it with Rails asset pipeline as you want -->
+</body>
+</html>

@@ -18,3 +18,10 @@
   	width: 80%;
   }
 }
+@media print { 
+ /* All your print styles go here */
+ #header, #footer, #nav { display: none !important; } 
+ .ftable{
+ 	background-color:black 
+ }
+}
