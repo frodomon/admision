@@ -14,9 +14,13 @@ class Request < ApplicationRecord
   validates_presence_of :email, message: "Debe ingresar su correo electronico"
   validates_presence_of :mobile, length: { is: 9, message: "Los números móviles tienen 9 digitos"}
   
-
+  
   attr_writer :current_step
 
+
+  def full_name
+    a ="#{try(:name)}  #{try(:last_name)}".to_s                                                                                                                                                                                                                                                                                                                                                                                                                 
+  end
   def current_step
   	@current_step || steps.first
   end

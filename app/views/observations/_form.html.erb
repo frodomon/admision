@@ -15,6 +15,14 @@
  <div class="col-12 col-lg-12 col-md-12">
   <div class="row">
     <div class="form-group col-4 col-lg-4 col-md-4">
+      <%= form.label :request_id, 'Solicitante', class: 'col-lg-4 col-md-4 col-sm-4 control-label' %>
+    </div>
+    <div class='col-lg-8 col-md-8 col-sm-8'>
+      <%= form.collection_select :request_id, Request.order(:id), :id, :full_name , options = {  :prompt => 'Seleccione al Solicitante'}, html_options = { class: 'select2_demo_1 form-control' } %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-4 col-lg-4 col-md-4">
       <%= form.label :observation_type_id, 'Tipo de Observación', class: 'col-lg-4 col-md-4 col-sm-4 control-label' %>
     </div>
     <div class='col-lg-8 col-md-8 col-sm-8'>
@@ -23,7 +31,7 @@
   </div>
   <div class="row">
     <div class="form-group col-4 col-lg-4 col-md-4">
-      <%= form.label :description, "Description" %>
+      <%= form.label :description, "Description", class: 'col-lg-4 col-md-4 col-sm-4 control-label' %>
     </div>
     <div class='col-lg-8 col-md-8 col-sm-8'>
       <%= form.text_area :description, class: "form-control" %>
