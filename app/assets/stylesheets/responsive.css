@@ -20,8 +20,12 @@
 }
 @media print { 
  /* All your print styles go here */
- #header, #footer, #nav { display: none !important; } 
- .ftable{
- 	background-color:black 
- }
+	#header, 
+	#footer, 
+	#nav { 
+		display: none !important; 
+	} 
+	.no-print{
+		display: none;
+	}
 }
