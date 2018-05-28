@@ -429,64 +429,59 @@ footer{
   max-width: 2480px;
   width: 100%;
 }
-  .table_campos{
-    font-family: "Arial";
-  font-size: 9px;
+.table_campos{
+  font-family: "Arial";
+font-size: 9px;
+border-bottom-style: dotted;
+border-width: 1px;
+height: 23px;
+}
+.table-titulo{
+border-width: 0px;
+}
+.ftable td{
+  width: auto;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+.ftable th{
+font-family: "Arial";
+font-size: 8px;
+font-weight: bold;
+background-color:#D9E4EE;
+}
+.fila_campos {
   border-bottom-style: dotted;
   border-width: 1px;
-  height: 23px;
-  }
-  .table-titulo{
-  border-width: 0px;
-  }
-  .ftable td{
-    width: auto;
-    overflow: hidden;
-    word-wrap: break-word;
-  }
-  .ftable th{
-  font-family: "Arial";
-  font-size: 8px;
-  font-weight: bold;
-  background-color:#D9E4EE;
-  }
-  .fila_campos {
-    border-bottom-style: dotted;
-    border-width: 1px;
-  }
-  .cabecera{
-    background-color:#0754D3;
-  }
-  .campos_round_border{
-    border-width: 1px;
-  border-radius: 20px;
-  }
-  .titulo{
-    font-weight: bold;
-  font-size: 12px;
-  font-family: "Arial";
-  color: #FFFFFF;
+}
+.cabecera{
   background-color:#0754D3;
-  text-align:center;
-  height: 25px;
-  }
-  .titulo_derecha{
-  font-size: 8px;
+}
+.campos_round_border{
+  border-width: 1px;
+border-radius: 20px;
+}
+.titulo{
+  font-weight: bold;
+font-size: 12px;
+font-family: "Arial";
+color: #FFFFFF;
+background-color:#0754D3;
+text-align:center;
+height: 25px;
+}
+.titulo_derecha{
+font-size: 8px;
+font-family: "Arial";
+color: #000000;
+background-color:#D9E4EE;
+text-align:left;
+}
+.subtitulo{
   font-family: "Arial";
-  color: #000000;
-  background-color:#D9E4EE;
-  text-align:left;
-  }
-  .subtitulo{
-    font-family: "Arial";
-    font-weight: bold;
-  font-size: 10px;
-  }
-  .pagebreak{ 
-    page-break-before: always;
-  }
-  @media  (min-width: 1024px) and (max-width: 1400px) {
-   .landing{
-    height: auto;
-   } 
- }
+  font-weight: bold;
+font-size: 10px;
+}
+.pagebreak{ 
+  page-break-before: always;
+}

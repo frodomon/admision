@@ -16,5 +16,6 @@
  *= require fonts
  *= require dataTables/datatables.min.css
  *= require iCheck/custom.css
+ *= require responsive
  *= require_self
  */
