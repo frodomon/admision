@@ -37,6 +37,28 @@
       <%= form.text_area :description, class: "form-control" %>
     </div>
   </div>
+  <div class="row">
+    <div class="form-group col-12 col-lg-12 col-md-12">
+      <% if can? :create, Observation %>
+        <% if (current_user.email.eql? 'farakaki@aelucoop.com.pe') %>
+          <%= form.check_box :farakaki %>
+          <%= form.label :farakaki, "Fernando Arakaki" %>
+        <% end %>
+        <% if (current_user.email.eql? 'wsanchez@aelucoop.com.pe') %>
+          <%= form.check_box :wsanchez %>
+          <%= form.label :wsanchez, "Walter Sanchez" %>
+        <% end %>
+        <% if (current_user.email.eql? 'cchinen@aelucoop.com.pe') %>
+          <%= form.check_box :cchinen %>
+          <%= form.label :cchinen, "Carolina Chinen" %>
+        <% end %>
+        <% if (current_user.email.eql? 'akawakami@aelucoop.com.pe') %>
+          <%= form.check_box :akira %>
+          <%= form.label :akira, "Akira Kawakami" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

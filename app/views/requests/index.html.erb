@@ -37,7 +37,7 @@
                         when 3
                           status = "Rechazado"
                         end
-                        %>
+                      %>
                     <td><%= status %></td>
                     <td><%= request.dni %></td>
                     <td><%= request.name %></td>
@@ -48,7 +48,7 @@
                     <td><%= request.telephone %></td>
                     <td><%= link_to 'Ver', request %></td>
                     <td><%= link_to 'Editar', edit_request_path(request) %></td>
-                    <td><%= link_to 'Eliminar', request, method: :delete, data: { confirm: '¿Estas Seguro?' } %></td>
+                    <td><%= link_to 'Agregar Observacion', { controller: :observations, action: :new, request_id: request.id}, class:  'btn btn-wm btn-success btn-xs'  %></td>
                   </tr>
                 <% end %>
               </tbody>

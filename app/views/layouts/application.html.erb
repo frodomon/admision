@@ -17,6 +17,11 @@
     <!-- Main view  -->
     <section id="header">
       <img class="logo-landing logo-form" src="<%= image_url 'logo.png' %>" alt="AELUCOOP">
+      <% if user_signed_in? %>
+        <%= current_user.name %></strong>
+        <%= current_user.email %></strong>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% end %>
     </section>
     <%= yield %>
   </div>

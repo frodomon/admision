@@ -1,4 +1,6 @@
 class RequestsController < ApplicationController
+  before_action :authenticate_user!, :except => [:index, :show ]
+  load_and_authorize_resource
   before_action :set_request, only: [:show, :edit, :update, :destroy]
 
   # GET /requests

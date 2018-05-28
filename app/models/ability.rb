@@ -4,7 +4,37 @@ class Ability
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
-    #   user ||= User.new # guest user (not logged in)
+    user ||= User.new # guest user (not logged in)
+    if user.has_role? :Admin
+      can :manage, :all
+    elsif user.has_role? :UIF
+      can :create, Observation
+      can :edit, User
+      can :read, :all
+    elsif user.has_role? :Admision
+      can :create, Observation
+      can :edit, User
+      can :read, :all
+    elsif user.has_role? :Agencia
+      can :create, Observation
+      can :edit, User
+      can :read, :all
+    elsif user.has_role? :Comite
+      can :create, Observation
+      can :edit, User
+      can :read, :all
+    else
+      can :create, User
+      cannot :read, User
+      canoot :read, :all
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        end
+    end
+  end
+
+
+
+
+
     #   if user.admin?
     #     can :manage, :all
     #   else
@@ -28,5 +58,3 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-  end
-end

@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :products
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 	get'inicio', to: 'static_pages#home', as: :home
+  get'index', to: 'static_pages#index', as: :index
   get'dashboard', to: 'static_pages#dashboard', as: :dashboard
   get'thanks', to: 'static_pages#thanks', as: :thanks
   get'pep', to: 'static_pages#pep', as: :pep

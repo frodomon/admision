@@ -1,4 +1,6 @@
 class ObservationsController < ApplicationController
+  before_action :authenticate_user!, :except => [:index, :show ]
+  load_and_authorize_resource
   before_action :set_observation, only: [:show, :edit, :update, :destroy]
 
   # GET /observations
@@ -14,7 +16,8 @@ class ObservationsController < ApplicationController
 
   # GET /observations/new
   def new
-    @observation = Observation.new
+    @request = Request.find(params[:request_id])
+    @observation = @request.observations.build
   end
 
   # GET /observations/1/edit
