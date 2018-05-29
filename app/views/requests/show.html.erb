@@ -70,7 +70,7 @@
       <td style="width:3%">D.N.I.:</td>
     <td style="width:14%"><%= @request.dni %></td>
     <td style="width:13.5%">Fecha de Nacimiento:</td>
-    <td style="width:16%"><%= @request.birthday %></td>
+    <td style="width:16%"><%= @request.birthday.strftime('%d/%m/%Y') %></td>
     <td style="width:3%">Sexo:</td>
     <td style="width:14%"><%= @request.genre %></td>
     <td style="width:8%">Estado Civil:</td>
@@ -113,7 +113,7 @@
           direccion = direccion + " Dpto " + @request.apartment 
         end
       %>
-      <td><%= direccion %></td>
+      <td><%= direccion %> Piso 2</td>
   </tr>
   </table>
   <table class="ftable table_campos">
