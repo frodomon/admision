@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_151111) do
     t.bigint "request_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["observation_type_id"], name: "index_observations_on_observation_type_id", unique: true
+    t.index ["observation_type_id"], name: "index_observations_on_observation_type_id"
     t.index ["request_id"], name: "index_observations_on_request_id"
   end
 
@@ -225,6 +225,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_151111) do
     t.string "last_name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "agencia"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

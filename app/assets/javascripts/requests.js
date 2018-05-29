@@ -21,25 +21,24 @@ $(document).ready(function () {
       })
     }
   }
-
+  /*Llenar Información de Reniec*/
 	if (document.getElementById("request_name")) { $("#request_name").val(persona.name); }
 	if (document.getElementById("request_last_name")) { $("#request_last_name").val(persona.last_name); }
 	if (document.getElementById("request_second_last_name")) { $("#request_second_last_name").val(persona.second_last_name); }
   if (document.getElementById("request_genre")) { $("#request_genre").val(persona.genre); }
   if (document.getElementById("request_birthday_1i")) { 
-
     cumple = persona.birthdate;
     fecha = cumple.split('-');
     dia = fecha[2];
     mes = fecha[1];
     anho = fecha[0];
-    alert('anho' + anho)
     $('#request_birthday_1i').val(Number(anho));
     $('#request_birthday_2i').val(Number(mes));
     $('#request_birthday_3i').val(Number(dia));
   }
   if (document.getElementById("request_civil_state")) { $("#request_civil_state").val(persona.civil_state); }
 
+  /*Llenar Información de Ubigeo */
   var departamentos = new Ubigeos.departamentos($('#departamento'))
   $('#departamento').on('change',function(e){
     e.preventDefault();
@@ -57,10 +56,12 @@ $(document).ready(function () {
     e.preventDefault();
     var optionSelected = $("option:selected", this);
     var distrito= this.value;
+    alert(distrito)
     $('#request_ubigeo_id').val(distrito)
   });
 
-	if (document.getElementById("request_job_type_id")) { 
+	/*Llenar campos Ubigeo en el formulario*/
+  if (document.getElementById("request_job_type_id")) { 
 		$('#request_job_type_id').on('change', function() {
 	    value = $(this).find(":selected").val();
 	    $('.job').hide();
@@ -296,8 +297,10 @@ $(document).ready(function () {
         flag = true;
       }
     }
-    if (document.getElementById("verifyData")) { 
-      if ($(".vmomr").val() != persona.mother_name){
+    if (document.getElementById("verifyData")) {
+      mom1 = $(".vmomr").val().toUpperCase();
+      mom2 = persona.mother_name.toUpperCase();
+      if ( mom1 != mom2){
         $(".vmomr").closest('.form-group').addClass('has-error');
         flag = false;
       }

@@ -23,11 +23,13 @@ class Ability
       can :create, Observation
       can :edit, User
       can :read, :all
+    elsif user.has_role? :Usuario
+      can :read, :all
     else
       can :create, Request
       can :create, User
       cannot :read, User
-      canoot :read, :all
+      cannot :read, :all
     end
   end
 end

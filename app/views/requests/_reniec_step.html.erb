@@ -76,14 +76,4 @@
   <%= form.hidden_field :civil_state %>
 </div>
 
-<% content_for :javascript do %>
-	<script type="text/javascript">
-		$(function() {
-	    $('.i-checks').iCheck({
-        radioClass: 'iradio_square-green',
-    	});
-		});
-	</script>
-<% end %>
-
 <%= javascript_tag "persona = #{@persona.to_json.html_safe};" %>

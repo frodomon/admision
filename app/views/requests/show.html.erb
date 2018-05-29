@@ -1,4 +1,4 @@
-<table class="ftable cabecera" cellpadding="7">
+<table id="show-request" class="ftable cabecera" cellpadding="7">
     <tr>
     <td style='font-size:22px; font-weight:bold; font-family:"Arial"; color:#FFFFFF;'>Ficha de Datos de Socio</td>
     <td rowspan="2" style='width:28%; font-family:"Arial"; color:#FFFFFF;'><img src="<%= image_url 'logo.png' %>"></td>
@@ -70,7 +70,11 @@
       <td style="width:3%">D.N.I.:</td>
     <td style="width:14%"><%= @request.dni %></td>
     <td style="width:13.5%">Fecha de Nacimiento:</td>
-    <td style="width:16%"><%= @request.birthday.strftime('%d/%m/%Y') %></td>
+    <% if @request.birthday %>
+      <td style="width:16%"><%= @request.birthday.strftime('%d/%m/%Y') %></td>
+    <% else %>
+      <td style="width:16%"></td>
+    <% end %>
     <td style="width:3%">Sexo:</td>
     <td style="width:14%"><%= @request.genre %></td>
     <td style="width:8%">Estado Civil:</td>
@@ -113,7 +117,7 @@
           direccion = direccion + " Dpto " + @request.apartment 
         end
       %>
-      <td><%= direccion %> Piso 2</td>
+      <td><%= direccion %></td>
   </tr>
   </table>
   <table class="ftable table_campos">
@@ -121,11 +125,11 @@
       <td style="width:7%">Urbanizaci&oacute;n:</td>
     <td style="width:17%"><%= @request.urbanization %></td>
     <td style="width:4%">Distrito:</td>
-    <td style="width:20%">Chorrillos</td>
+    <td style="width:20%"><%= @distrito.name %></td>
     <td style="width:5%">Provincia:</td>
-    <td style="width:19%">Lima</td>
+    <td style="width:19%"><%= @provincia.name %></td>
     <td style="width:6%">Departamento:</td>
-    <td>Lima</td>
+    <td><%= @departamento.name %></td>
   </tr>
   </table>
   <table class="ftable table_campos">

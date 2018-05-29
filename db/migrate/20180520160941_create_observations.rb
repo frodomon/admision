@@ -1,7 +1,7 @@
 class CreateObservations < ActiveRecord::Migration[5.2]
   def change
     create_table :observations do |t|
-      t.belongs_to :observation_type, index: { unique: true }, foreign_key: true
+      t.references :observation_type, foreign_key: true
       t.text :description
       t.boolean :farakaki
       t.boolean :wsanchez

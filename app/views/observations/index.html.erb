@@ -11,8 +11,9 @@
             <table class="table table-stripped table-bordered table-hover datatable">
               <thead>
                 <tr>
-                  <th>Observacion</th>
+                  <th>DNI</th>
                   <th>Tipo Observación</th>
+                  <th>Observacion</th>
                   <th></th>
                   <th></th>
                   <th></th>
@@ -22,8 +23,9 @@
               <tbody>
                 <% @observations.each do |observation| %>
                   <tr>
+                    <td><%= Request.find(observation.request_id).dni %></td>
+                    <td><%= ObservationType.find(observation.observation_type_id).nombre %></td>
                     <td><%= observation.description %></td>
-                    <td><%= observation.observation_type_id %></td>
                     <td><%= link_to 'Show', observation %></td>
                     <td><%= link_to 'Edit', edit_observation_path(observation) %></td>
                     <td><%= link_to 'Destroy', observation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
