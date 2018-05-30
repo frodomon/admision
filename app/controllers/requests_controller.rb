@@ -95,12 +95,19 @@ class RequestsController < ApplicationController
 
   def search_spouse
   end
+
   def spouse
     @spouse = Reniec.search(params[:search])
     respond_to do |format|
       format.json { render json: @spouse}
     end
   end
+
+  def view_observations
+    @request_id = params[:id]
+    @observations = Observation.where('request_id = ?', params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_request

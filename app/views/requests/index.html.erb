@@ -46,9 +46,9 @@
                     <td><%= request.email %></td>
                     <td><%= request.mobile %></td>
                     <td><%= request.telephone %></td>
-                    <td><%= link_to 'Ver', request %></td>
-                    <td><%= link_to 'Editar', edit_request_path(request) %></td>
+                    <td><%= link_to 'Ver Solicitud', request, class: 'btn btn-wm btn-success btn-xs' %></td>
                     <td><%= link_to 'Agregar Observacion', { controller: :observations, action: :new, request_id: request.id}, class:  'btn btn-wm btn-success btn-xs'  %></td>
+                    <td><%= link_to 'Ver Observaciones', { controller: :requests, action: :view_observations, id: request.id}, class:  'btn btn-wm btn-success btn-xs' %></td>
                   </tr>
                 <% end %>
               </tbody>
@@ -60,11 +60,11 @@
   </div>
 <br>
 
-<%= link_to 'New Request', new_request_path %>
+<%= link_to 'Nueva Solicitud', new_request_path, class: 'btn btn-wm btn-success' %>
 <% content_for :javascript do %>
   <script type="text/javascript">
     $(document).ready(function() {
-        load_table_controls('datatable','Solicitudes');
+      load_table_controls('datatable','Solicitudes');
     });
   </script>
 <% end %>

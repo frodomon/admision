@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     collection do
       get 'search_spouse' => 'requests#search_spouse', as: :search_spouse
       get 'spouse/' => 'requests#spouse', as: :spouse
+      get 'view_observations/' => 'requests#view_observations', as: :view_observations
     end
   end
   resources :job_types

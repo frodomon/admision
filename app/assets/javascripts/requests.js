@@ -56,7 +56,6 @@ $(document).ready(function () {
     e.preventDefault();
     var optionSelected = $("option:selected", this);
     var distrito= this.value;
-    alert(distrito)
     $('#request_ubigeo_id').val(distrito)
   });
 
@@ -74,16 +73,24 @@ $(document).ready(function () {
 	    		$('.company').toggle();
     			break;
     		case '2':
+          $('#request_job').val('Trabajador Independiente');
+          $('.business').toggle();
+          break;
     		case '3':
-    			$('.business').toggle();
+    			$('#request_job').val('Negocio Propio');
+          $('.business').toggle();
     			break;
     		case '4':
+          $('#request_job').val('Estudiante');
     			$('.college').toggle();
     			break;
     		case '5':
+          $('#request_job').val('Ama de Casa');
+          break;
     		case '6':
+          $('#request_job').val('Jubilado o Desempleado');
+          break;
     		default:
-
 	    }
 	  })
 	};

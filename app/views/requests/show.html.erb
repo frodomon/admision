@@ -123,14 +123,26 @@
   <table class="ftable table_campos">
     <tr>
       <td style="width:7%">Urbanizaci&oacute;n:</td>
-    <td style="width:17%"><%= @request.urbanization %></td>
-    <td style="width:4%">Distrito:</td>
-    <td style="width:20%"><%= @distrito.name %></td>
-    <td style="width:5%">Provincia:</td>
-    <td style="width:19%"><%= @provincia.name %></td>
-    <td style="width:6%">Departamento:</td>
-    <td><%= @departamento.name %></td>
-  </tr>
+      <td style="width:17%"><%= @request.urbanization %></td>
+      <td style="width:4%">Distrito:</td>
+      <td style="width:20%">
+        <% unless @distrito.name.nil? %>
+          <%= @distrito.name %>
+        <% end %>
+      </td>
+      <td style="width:5%">Provincia:</td>
+        <td style="width:19%">
+          <% unless @provincia.name.nil? %>
+            <%= @provincia.name %>
+          <% end %> 
+          </td>
+      <td style="width:6%">Departamento:</td>
+        <td>
+          <% unless @departamento.name.nil? %>
+            <%= @departamento.name %>
+          <% end %> 
+        </td>
+    </tr>
   </table>
   <table class="ftable table_campos">
     <tr>
@@ -413,5 +425,5 @@
     </tr>
   </table>
 <div class="no-print">
-  <%= link_to 'Back', requests_path %>
+  <%= link_to 'Regresar', requests_path, class: 'btn btn-wm btn-success' %>
 </div>
