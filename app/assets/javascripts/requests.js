@@ -71,6 +71,7 @@ $(document).ready(function () {
 	    	case '1':
 	    		$('.job').toggle();
 	    		$('.company').toggle();
+          $('#request').css('height','auto');
     			break;
     		case '2':
           $('#request_job').val('Trabajador Independiente');
@@ -198,6 +199,7 @@ $(document).ready(function () {
 	    $('#request_spouse_birthday_1i').val(Number(anho));
       $('#request_spouse_birthday_2i').val(Number(mes));
       $('#request_spouse_birthday_3i').val(Number(dia));
+      $('#request').css('height','auto');
 	  }
   });
 

@@ -32,4 +32,5 @@
       </div>
     </div>
   </div>              
-  <%= link_to 'Agregar Observacion', { controller: :observations, action: :new, request_id: @request_id}, class:  'btn btn-wm btn-success btn-xs'  %>
+  <%= link_to 'Agregar Observación', { controller: :observations, action: :new, request_id: @request_id}, class:  'btn btn-wm btn-success'  %>
+  <%= button_to 'Volver', { action: 'index'}, method: :get, class: 'btn btn-w-m btn-info' %>

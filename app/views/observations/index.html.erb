@@ -42,8 +42,9 @@
 <br>
 <div class='row'>
   <div class="col-lg-12">
-    <%= link_to 'New Observation', new_observation_path, class: 'btn btn-wm btn-success' %>
+    <%= link_to 'Nueva Observación', new_observation_path, class: 'btn btn-wm btn-success' %>
   </div>
+  <%= button_to 'Volver', { controller: 'requests', action: 'index'}, method: :get, class: 'btn btn-w-m btn-info' %>
 </div>
 
 <% content_for :javascript do %>

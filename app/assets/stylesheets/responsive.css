@@ -1,4 +1,4 @@
-@media  (min-width: 1024px) and (max-width: 1400px) {
+@media  (min-width: 1000px) and (max-width: 1400px) {
   html, body{
   	font-size:14px !important;
   }
@@ -6,7 +6,8 @@
   	height: auto;
   }
   .left50{
-  	width:60%;
+  	width:100%;
+    padding: 0 10%;
   }
   .landing-title{
   	padding-top: 2rem;
