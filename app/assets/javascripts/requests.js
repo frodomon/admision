@@ -176,7 +176,6 @@ $(document).ready(function () {
 	
 	$('#search_spouse_button').click(function(event){
   	event.preventDefault();
-    debugger;
   	search = $('#search_spouse').val();
   	if (search != 0 ) {
   	  parameters = {search: search }; 
