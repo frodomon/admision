@@ -1,127 +1,155 @@
 <%= form_with(model: reniec, local: true) do |form| %>
-  <% if reniec.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(reniec.errors.count, "error") %> prohibited this reniec from being saved:</h2>
+  <%= form_errors_for reniec %>
 
-      <ul>
-      <% reniec.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="row">
+    <div class= "<%= field_class(reniec, :doi) %> col-lg-3 col-md-3 col-sm-3">
+      <%= form.label :doi, 'DNI', class: 'control-label' %>
+      <%= form.text_field :doi, placeholder: 'DNI', class: 'form-control' %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :dni %>
-    <%= form.text_field :dni %>
+    <div class= "<%= field_class(reniec, :last_name) %> col-lg-3 col-md-3 col-sm-3">
+      <%= form.label :last_name, 'Apellido Paterno', class: 'control-label' %>
+      <%= form.text_field :last_name, class: 'form-control' %>
+    </div>
+    <div class= "<%= field_class(reniec, :second_last_name) %> col-lg-3 col-md-3 col-sm-3">
+      <%= form.label :second_last_name, 'Apellido Materno', class: 'control-label' %>
+      <%= form.text_field :second_last_name, class: 'form-control' %>
+    </div>
+    <div class= "<%= field_class(reniec, :name) %> col-lg-3 col-md-3 col-sm-3">
+      <%= form.label :name, 'Nombre', class: 'control-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+  <div class="row">
+    <div class= "<%= field_class(reniec, :genre) %> col-lg-6 col-md-6 col-sm-6">
+      <%= form.label :genre, 'Género', class: 'control-label' %>
+      <%= form.text_field :genre, class: 'form-control' %>
+    </div>
+    <div class= "<%= field_class(reniec, :birthdate) %> col-lg-6 col-md-6 col-sm-6">
+      <%= form.label :birthdate, 'Fecha de Nacimiento', class: 'control-label' %>
+      <%= form.text_field :birthdate, placeholder: @today, class: 'form-control' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :second_last_name %>
-    <%= form.text_field :second_last_name %>
+  <div class="row">
+    <div class= "<%= field_class(reniec, :birth_departamento) %> col-lg-4 col-md-4 col-sm-4">
+      <%= form.label :birth_departamento, 'Departamento de Nacimiento', class: 'control-label' %>
+      <%= form.text_field :birth_departamento, class: 'form-control' %>
+    </div>
+    <div class= "<%= field_class(reniec, :birth_provincia) %> col-lg-4 col-md-4 col-sm-4">
+      <%= form.label :birth_provincia, 'Provincia de Nacimiento', class: 'control-label' %>
+      <%= form.text_field :birth_provincia, class: 'form-control' %>
+    </div>
+    <div class= "<%= field_class(reniec, :birth_distrito) %> col-lg-4 col-md-4 col-sm-4">
+      <%= form.label :birth_distrito, 'Distrito de Nacimiento', class: 'control-label' %>
+      <%= form.text_field :birth_distrito, class: 'form-control' %>
+    </div>
   </div>
+  <div class="row">
+    <div class= "<%= field_class(reniec, :degree) %> col-lg-4 col-md-4 col-sm-4">
+      <%= form.label :degree, 'Grado de Instrucción', class: 'control-label' %>
+      <%= form.text_field :degree, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class= "<%= field_class(reniec, :civil_state) %> col-lg-4 col-md-4 col-sm-4">
+      <%= form.label :civil_state, 'Estado Civil', class: 'control-label' %>
+      <%= form.text_field :civil_state, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= form.label :genre %>
-    <%= form.text_field :genre %>
+    <div class= "<%= field_class(reniec, :height) %> col-lg-4 col-md-4 col-sm-4">
+      <%= form.label :height, 'Estatura', class: 'control-label' %>
+      <%= form.text_field :height, class: 'form-control' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :birthdate %>
-    <%= form.date_select :birthdate %>
+  <div class="row">
+    <div class= "<%= field_class(reniec, :register) %> col-lg-4 col-md-4 col-sm-4">
+      <%= form.label :register, 'Fecha de Registro', class: 'control-label' %>
+      <%= form.text_field :register, placeholder: @today, class: 'form-control' %>
+    </div>
+    <div class= "<%= field_class(reniec, :father_name) %> col-lg-4 col-md-4 col-sm-4">
+      <%= form.label :father_name, 'Nombre del Padre', class: 'control-label' %>
+      <%= form.text_field :father_name, class: 'form-control' %>
+    </div>
+    <div class= "<%= field_class(reniec, :mother_name) %> col-lg-4 col-md-4 col-sm-4">
+      <%= form.label :mother_name, 'Nombre de la Madre', class: 'control-label' %>
+      <%= form.text_field :mother_name, class: 'form-control' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :birth_departamento %>
-    <%= form.text_field :birth_departamento %>
+  <div class="row">
+    <div class= "<%= field_class(reniec, :emission_date) %> col-lg-6 col-md-6 col-sm-6">
+      <%= form.label :emission_date, 'Fecha de Emisión', class: 'control-label' %>
+      <%= form.text_field :emission_date, placeholder: @today,class: 'form-control' %>
+    </div>
+    <div class= "<%= field_class(reniec, :restriction) %> col-lg-6 col-md-6 col-sm-6">
+      <%= form.label :restriction, 'Restricción',   class: 'control-label' %>
+      <%= form.text_field :restriction, class: 'form-control' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :birth_provincia %>
-    <%= form.text_field :birth_provincia %>
+  <div class="row">
+    <div class= "<%= field_class(reniec, :departamento) %> col-lg-4 col-md-4 col-sm-4">
+      <%= form.label :departamento, 'Departamento', class: 'control-label' %>
+      <%= form.text_field :departamento, class: 'form-control' %>
+    </div>
+    <div class= "<%= field_class(reniec, :provincia) %> col-lg-4 col-md-4 col-sm-4">
+      <%= form.label :provincia, 'Provincia', class: 'control-label' %>
+      <%= form.text_field :provincia, class: 'form-control' %>
+    </div>
+    <div class= "<%= field_class(reniec, :distrito) %> col-lg-4 col-md-4 col-sm-4">
+      <%= form.label :distrito, 'Distrito', class: 'control-label' %>
+      <%= form.text_field :distrito, class: 'form-control' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :birth_distrito %>
-    <%= form.text_field :birth_distrito %>
+  <div class="row">
+    <div class= "<%= field_class(reniec, :address) %> col-lg-6 col-md-6 col-sm-6">
+      <%= form.label :address, 'Dirección', class: 'control-label' %>
+      <%= form.text_field :address, class: 'form-control' %>
+    </div>
+    <div class= "<%= field_class(reniec, :due_date) %> col-lg-6 col-md-6 col-sm-6">
+      <%= form.label :due_date, 'Fecha de Caducidad' %>
+      <%= form.text_field :due_date, placeholder: @today, class: 'form-control' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :degree %>
-    <%= form.text_field :degree %>
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <%= form.submit class: 'btn btn-success' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :civil_state %>
-    <%= form.text_field :civil_state %>
-  </div>
-
-  <div class="field">
-    <%= form.label :height %>
-    <%= form.text_field :height %>
-  </div>
-
-  <div class="field">
-    <%= form.label :register %>
-    <%= form.date_select :register %>
-  </div>
-
-  <div class="field">
-    <%= form.label :father_name %>
-    <%= form.text_field :father_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :mother_name %>
-    <%= form.text_field :mother_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :emission_date %>
-    <%= form.date_select :emission_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :restriction %>
-    <%= form.text_field :restriction %>
-  </div>
-
-  <div class="field">
-    <%= form.label :departamento %>
-    <%= form.text_field :departamento %>
-  </div>
-
-  <div class="field">
-    <%= form.label :provincia %>
-    <%= form.text_field :provincia %>
-  </div>
-
-  <div class="field">
-    <%= form.label :distrito %>
-    <%= form.text_field :distrito %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :due_date %>
-    <%= form.date_select :due_date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<% end %>
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    $('#reniec_birthdate').datepicker({
+      todayBtn: "linked",
+      keyboardNavigation: false,
+      forceParse: false,
+      calendarWeeks: true,
+      autoclose: true,
+      todayHighlight: true,
+      format: 'dd-mm-yyyy'
+    });
+    $('#reniec_register').datepicker({
+      todayBtn: "linked",
+      keyboardNavigation: false,
+      forceParse: false,
+      calendarWeeks: true,
+      autoclose: true,
+      todayHighlight: true,
+      format: 'dd-mm-yyyy'
+    });
+    $('#reniec_emission_date').datepicker({
+      todayBtn: "linked",
+      keyboardNavigation: false,
+      forceParse: false,
+      calendarWeeks: true,
+      autoclose: true,
+      todayHighlight: true,
+      format: 'dd-mm-yyyy'
+    });
+    $('#reniec_due_date').datepicker({
+      todayBtn: "linked",
+      keyboardNavigation: false,
+      forceParse: false,
+      calendarWeeks: true,
+      autoclose: true,
+      todayHighlight: true,
+      format: 'dd-mm-yyyy'
+    });
+  </script>
 <% end %>

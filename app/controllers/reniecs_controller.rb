@@ -69,6 +69,6 @@ class ReniecsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reniec_params
-      params.require(:reniec).permit(:dni, :last_name, :second_last_name, :name, :genre, :birthdate, :birth_departamento, :birth_provincia, :birth_distrito, :degree, :civil_state, :height, :register, :father_name, :mother_name, :emission_date, :restriction, :departamento, :provincia, :distrito, :address, :due_date)
+      params.require(:reniec).permit(:doi, :last_name, :second_last_name, :name, :genre, :birthdate, :birth_departamento, :birth_provincia, :birth_distrito, :degree, :civil_state, :height, :register, :father_name, :mother_name, :emission_date, :restriction, :departamento, :provincia, :distrito, :address, :due_date)
     end
 end
