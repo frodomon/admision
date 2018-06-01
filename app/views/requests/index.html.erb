@@ -21,7 +21,10 @@
                   <th>Telefono</th>
                   <th></th>
                   <th></th>
-                  <th></th> 
+                  <th></th>
+                  <% if can? :manage, request %>
+                    <th></th>
+                  <% end %>    
                 </tr>
               </thead>
               <tbody>
@@ -49,6 +52,9 @@
                     <td><%= link_to 'Ver Solicitud', request, class: 'btn btn-wm btn-success btn-xs' %></td>
                     <td><%= link_to 'Agregar Observacion', { controller: :observations, action: :new, request_id: request.id}, class:  'btn btn-wm btn-success btn-xs'  %></td>
                     <td><%= link_to 'Ver Observaciones', { controller: :requests, action: :view_observations, id: request.id}, class:  'btn btn-wm btn-success btn-xs' %></td>
+                    <% if can? :manage, request %>
+                      <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <% end %>    
                   </tr>
                 <% end %>
               </tbody>
