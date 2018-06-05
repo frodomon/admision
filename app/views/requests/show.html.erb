@@ -292,36 +292,115 @@
   </table>
   <p/>
   <table class="ftable">
-  <tr>
-     <th style="width:30%">Nombres</th>
-     <th style="width:30%">Apellido Paterno</th>
-     <th style="width:30%">Apellido Materno</th>
-     <th style="width:10%">Fecha de Nacimiento</th>
-  </tr>
-  <tr style="height:20px;">
-      <td style="border-bottom: 1px dotted black;"></td>
-    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
-    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
-    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
-  </tr>
-  <tr style="height:20px;">
-      <td style="border-bottom: 1px dotted black;"></td>
-    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
-    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
-    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
-  </tr>
-  <tr style="height:20px;">
-      <td style="border-bottom: 1px dotted black;"></td>
-    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
-    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
-    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
-  </tr>
-  <tr style="height:20px;">
-      <td style="border-bottom: 1px dotted black;"></td>
-    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
-    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
-    <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
-  </tr>
+    <thead>
+      <tr>
+        <th style="width:30%">Nombres</th>
+        <th style="width:30%">Apellido Paterno</th>
+        <th style="width:30%">Apellido Materno</th>
+        <th style="width:10%">Fecha de Nacimiento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% 
+        nrohijos = @request.dependents.count
+        case nrohijos
+        when 1    #compare to 1
+          @request.dependents.each do |hijo| %>
+            <tr style="height:20px;">
+              <td style="border-bottom: 1px dotted black;"><%= hijo.name %></td>
+              <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"><%= hijo.last_name %></td>
+              <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"><%= hijo.second_last_name %></td>
+              <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"><%= hijo.birthdate.strftime('%d/%m/%Y') %></td>
+            </tr>
+          <% end %>
+          <tr style="height:20px;">
+            <td style="border-bottom: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+          </tr>
+          <tr style="height:20px;">
+            <td style="border-bottom: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+          </tr>
+          <tr style="height:20px;">
+            <td style="border-bottom: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+          </tr>
+        <%
+        when 2    #compare to 2
+          @request.dependents.each do |hijo| %>
+            <tr style="height:20px;">
+              <td style="border-bottom: 1px dotted black;"><%= hijo.name %></td>
+              <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"><%= hijo.last_name %></td>
+              <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"><%= hijo.second_last_name %></td>
+              <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"><%= hijo.birthdate.strftime('%d/%m/%Y') %></td>
+            </tr>
+          <% end %>
+          <tr style="height:20px;">
+            <td style="border-bottom: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+          </tr>
+          <tr style="height:20px;">
+            <td style="border-bottom: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+          </tr>
+        <%
+        when 3
+          @request.dependents.each do |hijo| %>
+            <tr style="height:20px;">
+              <td style="border-bottom: 1px dotted black;"><%= hijo.name %></td>
+              <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"><%= hijo.last_name %></td>
+              <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"><%= hijo.second_last_name %></td>
+              <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"><%= hijo.birthdate.strftime('%d/%m/%Y') %></td>
+            </tr>
+          <% end %>
+          <tr style="height:20px;">
+            <td style="border-bottom: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+          </tr>
+        <%
+        when 4
+          @request.dependents.each do |hijo| %>
+            <tr style="height:20px;">
+              <td style="border-bottom: 1px dotted black;"><%= hijo.name %></td>
+              <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"><%= hijo.last_name %></td>
+              <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"><%= hijo.second_last_name %></td>
+              <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"><%= hijo.birthdate.strftime('%d/%m/%Y') %></td>
+            </tr>
+          <% end
+
+        else %>
+          <tr style="height:20px;">
+            <td style="border-bottom: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+          </tr>
+          <tr style="height:20px;">
+            <td style="border-bottom: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+          </tr>
+          <tr style="height:20px;">
+            <td style="border-bottom: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+            <td style="border-bottom: 1px dotted black;border-left: 1px dotted black;"></td>
+          </tr>
+        <% end %>
+    </tbody>
   </table>
   <div class="pagebreak">
   <table class="ftable">
@@ -332,17 +411,20 @@
   </tr>
   </table>
   <table class="ftable" style='font-family:"Arial";font-size:9px;'>
-    <tr><td>Declaro que:</td></tr>
+    <tr><td>¿Desempeñas o has desempeñado algún cargo público o función importante en una organización internacional durante los últimos 5 años en el Perú o en el extranjero?</td></tr>
   </table>
   <table class="ftable" style='font-weight:bold;font-align:"center";font-family:"Arial";font-size:8.5px;text-align:center;'>
     <tr>
-        <td><span style="font-size:22px">&#9675;</span> No ocupo un cargo p&uacute;blico.*</td>
-        <td><span style="font-size:22px">&#9675;</span> No he ocupado un cargo p&uacute;blico.*</td>
-        <td><span style="font-size:22px">&#9675;</span> No tengo v&iacute;nculos familiares con personas que ocupan o han ocupado cargos p&uacute;blicos.*</td>
+      <td><span style="font-size:22px">&#9675;</span> Si(*).</td>
+      <% if (@request.pep === false) %>
+        <td><span style="font-size:22px">&#9679;</span> No.</td>
+      <% else %>
+        <td><span style="font-size:22px">&#9675;</span> No.</td>
+      <% end %>
   </tr>
   </table>
   <table class="ftable" style='text-align:center;font-family:"Arial";font-size:9px;'>
-    <tr><td>(*) De tener una respuesta afirmativa a una de las opciones antes mencionadas, el interesado deber&aacute; llenar el formato adicional que le ser&aacute; proporcionado.</td></tr>
+    <tr><td>(*) De tener una respuesta afirmativa el interesado deber&aacute; llenar el formato adicional que le ser&aacute; proporcionado.</td></tr>
   </table>
   <br/>
   <table class="ftable" >
