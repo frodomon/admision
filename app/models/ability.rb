@@ -8,19 +8,22 @@ class Ability
     if user.has_role? :Admin
       can :manage, :all
     elsif user.has_role? :UIF
+      can :manage, Request
       can :manage, Observation
       can :edit, User
       can :read, :all
     elsif user.has_role? :Admision
+      can :manage, Request
       can :manage, Observation
-      can :edit, Observation
       can :edit, User
       can :read, :all
     elsif user.has_role? :Agencia
+      can :manage, Request
       can :manage, Observation
       can :edit, User
       can :read, :all
     elsif user.has_role? :Comite
+      can :manage, Request
       can :manage, Observation
       can :edit, User
       can :read, :all
