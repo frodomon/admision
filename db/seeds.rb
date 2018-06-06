@@ -1,3 +1,4 @@
-
-User.create(name:'Jorge', last_name: 'Yazawa', email: 'jyazawa@aelucoop.com.pe', password: 'aelucoop', password_confirmation: 'aelucoop', roles_mask: 8)
-User.create(name:'Javier', last_name: 'Miyashiro', email: 'jmiyashiro@aelucoop.com.pe', password: 'aelucoop', password_confirmation: 'aelucoop', roles_mask: 8)
+User.create(name:'Mónica Pilar', last_name: 'Chávez Mori', email: 'mchavez@aelucoop.com.pe', password: 'aelucoop', password_confirmation: 'aelucoop', roles_mask: 8)
+User.create(name:'Aldo', last_name: 'Yonashiro', email: 'ayonashiro@aelucoop.com.pe', password: 'aelucoop', password_confirmation: 'aelucoop', roles_mask: 8)
+User.create(name:'Kenmei Diego', last_name: 'Ouchida Nakama', email: 'kouchida@aelucoop.com.pe', password: 'aelucoop', password_confirmation: 'aelucoop', roles_mask: 8)
+User.create(name:'César Akira', last_name: 'Tengan Izena', email: 'ctengan@aelucoop.com.pe', password: 'aelucoop', password_confirmation: 'aelucoop', roles_mask: 8)

@@ -2952,3 +2952,5 @@ User.create(name:'Fernando', last_name: 'Arakaki', agencia: 'Principal',  email:
 User.create(name:'Walter', last_name: 'Sanchez', agencia: 'Principal',  email: 'wsanchez@aelucoop.com.pe', password: 'aelucoop', password_confirmation: 'aelucoop', roles_mask: 8)
 User.create(name:'Carolina', last_name: 'Chinen', agencia: 'Principal',  email: 'cchinen@aelucoop.com.pe', password: 'aelucoop', password_confirmation: 'aelucoop', roles_mask: 8)
 User.create(name:'Akira', last_name: 'Kawakami', agencia: 'Principal',  email: 'akawakami@aelucoop.com.pe', password: 'aelucoop', password_confirmation: 'aelucoop', roles_mask: 8)
+User.create(name:'Jorge', last_name: 'Yazawa', email: 'jyazawa@aelucoop.com.pe', password: 'aelucoop', password_confirmation: 'aelucoop', roles_mask: 8)
+User.create(name:'Javier', last_name: 'Miyashiro', email: 'jmiyashiro@aelucoop.com.pe', password: 'aelucoop', password_confirmation: 'aelucoop', roles_mask: 8)
