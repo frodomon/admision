@@ -180,7 +180,8 @@ $(document).ready(function () {
   	search = $('#search_spouse').val();
   	if (search != 0 ) {
   	  parameters = {search: search }; 
-	    spouse = get_data('/requests/spouse', parameters); 
+	    debugger
+      spouse = get_data("requests/spouse", parameters); 
 	    nombre = spouse.name + ' ' + spouse.last_name + ' ' + spouse.second_last_name;
       $('.spouse-name').text(nombre);
 	    cumple = spouse.birthdate;

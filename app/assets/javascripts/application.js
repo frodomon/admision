@@ -11,11 +11,11 @@
 // about supported directives.
 //
 //= require jquery3
+//= require load_data
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require uiux
-//= require load_data
 //= require add_remove_fields
 //= require validations
 //= require ubigeos

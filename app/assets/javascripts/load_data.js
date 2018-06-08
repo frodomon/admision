@@ -25,9 +25,9 @@ function get_data(url, params){
         PopulateResult(data, result)
       }
   })
-  return result;
-  
+  return result; 
 }
+
 function PopulateResult(data, result){
   $.each(data, function(i,obj){
     result.doi = obj.doi
